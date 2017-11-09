@@ -1,0 +1,101 @@
+const array = ['Hello', true, null, function(a, b), [1,2] ]
+arr.join('-')
+> sentence = ['I', 'want', 'to', 'say', 'hello']
+[ 'I', 'want', 'to', 'say', 'hello' ]
+> sentence.join(' ');
+'I want to say hello'
+> sentence.join('-');
+'I-want-to-say-hello'
+
+array.push('1')  ===> add value to the end of array
+> sentence.push('for')
+6
+> sentence
+[ 'I', 'want', 'to', 'say', 'hello', 'for' ]
+>
+> sentence.pop()
+'for'
+> sentence
+[ 'I', 'want', 'to', 'say', 'hello' ]
+
+
+array.pop() ===> removes element
+> sentence
+[ 'I', 'want', 'to', 'say', 'hello' ]
+>
+
+changing a value in the middle of array
+> sentence[4] = 'Hello';
+'Hello'
+> sentence
+[ 'I', 'want', 'to', 'say', 'Hello' ]
+
+
+array.slice()
+> sentence.slice(1)
+[ 'want', 'to', 'say', 'Hello' ]
+> sentence.slice(1,4)
+[ 'want', 'to', 'say' ]
+> sentence.slice(-2)
+[ 'say', 'Hello' ]
+
+array[] =
+> sentence[-1] = 'hey'
+'hey'
+> sentence
+[ 'I', 'want', 'to', 'say', 'Hello', '-1': 'hey' ]
+
+
+> sentence.shift()
+'I'
+> sentence
+[ 'want', 'to', 'say', 'Hello', '-1': 'hey' ]
+> sentence.push("I'm here")
+5
+> sentence
+[ 'want', 'to', 'say', 'Hello', 'I\'m here', '-1': 'hey' ]
+> sentence.pop(-1)
+'I\'m here'
+> sentence
+[ 'want', 'to', 'say', 'Hello', '-1': 'hey' ]
+
+> sentence
+[ 'I', 'want', 'to', 'say', 'Hello', '-1': '' ]
+> 'Hello CodeCore Students'.split()
+[ 'Hello CodeCore Students' ]
+> 'Hello CodeCore Students'.split('')
+[ 'H',
+  'e',
+  'l',
+  'l',
+  'o',
+  ' ',
+  'C',
+  'o',
+  'd',
+  'e',
+  'C',
+  'o',
+  'r',
+  'e',
+  ' ',
+  'S',
+  't',
+  'u',
+  'd',
+  'e',
+  'n',
+  't',
+  's' ]
+> 'Hello CodeCore Students'.split(' ')
+[ 'Hello', 'CodeCore', 'Students' ]
+> 'Hello CodeCore Students'.split('e')  ===> excludes letter 'e's
+[ 'H', 'llo Cod', 'Cor', ' Stud', 'nts' ]
+> 'Hello CodeCore Students'.split(/-|\s/g)
+[ 'Hello', 'CodeCore', 'Students' ]
+> 'Hello CodeCore Students'.split(/-[\s]/g)
+[ 'Hello CodeCore Students' ]
+> 'Hello CodeCore Students'.split(/[,\s]/g)
+[ 'Hello', 'CodeCore', 'Students' ]
+
+www.regex101.com  (regular expression)

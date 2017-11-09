@@ -1,0 +1,24 @@
+sudo apt install git
+
+atom . ==> open in the directorie you are in atom
+
+.gitconfig ===> where we set configurations
+
+git add a.txt ===>  add as a part staging for after committing
+git add . ===> all files at once
+
+git status ===> to see the status of files on the folder
+
+git log ===> show what you add for commiting
+
+git diff ===> see changes made in files
+
+git commit --amend ===> not recommended
+
+ cat ~/.ssh/id_rsa.pub
+
+ ln -s ../"day 2"/2.txt link   ===> create symbolic link for a file that is in another place
+
+ git clone "address"
+
+ git pull ===> update

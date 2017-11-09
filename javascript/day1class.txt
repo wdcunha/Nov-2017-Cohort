@@ -1,0 +1,45 @@
+* install nvm
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+* install node
+nvm list (to see what is installed)
+nvm install node
+
+***
+`it is a string` iqual 'this one' or 'this'
+
+'when you use aphostrofe in the middle of text like it's' ===> it will a be a problem
+'it\'s possible to do this' or "it's possible"
+
+***
+console.log("hello \n world"); different than just
+> console.log("hello \n world");
+hello
+ world
+undefined
+> "hello \n world"
+'hello \n world'
+
+*interpolation
+> `Calculating 1 + 1 is ${1+1}`
+'Calculating 1 + 1 is 2'
+
+***
+> 'Calculating 1 + 1 is ${1+1}'.length
+27
+> `Calculating 1 + 1 is ${1+1}`.length
+22
+
+*Console in Chrome has the same feature as in the terminal
+
+* Alert('something') won't work in node window
+
+**
+require is used to import files written for us or from a library (module) built-in or third-party
+to take input from the user, we will need to create an interface with readline and tell
+stdin and stdout is just a taking input and giving output through the terminal (CLI)
+
+** Build a Safe
+
+**
+double == doesn't check the type, just value, otherwise === do
