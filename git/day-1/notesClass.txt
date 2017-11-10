@@ -22,3 +22,9 @@ git commit --amend ===> not recommended
  git clone "address"
 
  git pull ===> update
+
+ rm -r filename === remove directory with all content protected or not
+
+mv [currentFileName] [newName]
+
+ls -a ===> list hidden files/directory
