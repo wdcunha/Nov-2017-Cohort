@@ -1,0 +1,5 @@
+chmod 664 [nameOfFile] gives permission to read and write on linux
+
+ctrl + shft + m ----> show how README.md will be showed
+
+git diff ----> show differences between old and new nameOfFile
