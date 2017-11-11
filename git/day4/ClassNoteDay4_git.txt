@@ -9,3 +9,27 @@ git show
 git remote -v   ----> show where the folder is linked with in git hub
 
 git push -u origin master  ----> just when you link with github, after we don't need
+
+git clean -f ---> exclude the history (better to search after)
+
+git reset 34e1e7f267d8cfd906099559c00dddf70cead0b0 ----> cancel what is waiting for sending (it will ignore all future changes)
+#commit 34e1e7f267d8cfd906099559c00dddf70cead0b0
+cat ~/.bash_history  --->  show history
+
+history  ----> show what commands were used
+
+*** creating a Branch
+git checkout -b nameOfIt  ---> create similar the mastar branch
+git branch -v
+
+
+git fetch  ---> it updates content from github in case someone had done sth besides us
+git pull (necessary after git fetch)
+
+
+git merge  ----> it will merge what was done in branchs  (push it's needed after)
+(ESC ;wq)
+
+git branch -D fizzbuzz_ruby
+Deleted branch fizzbuzz_ruby (was a605f44).  -----> afer merged, we can delete the branch....it's a best practice, because
+ all you need is on the master
