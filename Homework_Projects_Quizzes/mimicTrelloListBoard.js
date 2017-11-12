@@ -9,17 +9,20 @@ const hello = {
     }
 };
 
-function listBoards(string) {
-
-  for (let boards in string) {
-    let list = {};
-    if (string !== '') {
-      
-      return string;
+function listBoards(obj) {
+  let dash = "\n------------------\n";
+  let result = dash;
+  let count = 0;
+  for(let boards in obj) {
+    if (obj !== '') {
+      count++;
+      result += `\n${count}- ${boards}\n${dash}`;
     } else {
-      console.log("There's no data to print");
+      result = "There's no data to print!";
+      return result;
     }
   }
+  return result;
 }
 
-console.log(listBoards(hello))
+console.log(listBoards(hello));

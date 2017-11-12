@@ -22,9 +22,9 @@ function parse(string){
  for(let i = 1; i < multiArr.length; i++) {
    //let tempArr = [];
    let tempObj = {};
-   console.log("multiArr");
+   //console.log("multiArr");
    for(let j = 0; j < multiArr[0].length; j++) {
-     console.log(multiArr[i][j]);
+     //console.log(multiArr[i][j]);
      tempObj[multiArr[0][j]] = multiArr[i][j];
    }
    resultArr.push(tempObj);
