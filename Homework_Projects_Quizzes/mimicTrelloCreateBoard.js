@@ -9,20 +9,31 @@ const hello = {
     }
 };
 
-newBoard = 'Dreams';
-console.log(Object.keys(hello));
+newBoard = "Cuisini";
+//console.log(Object.keys(hello));
 
 function createBoard(obj, boardName) {
+  let arr = Object.keys(obj);
+  console.log('Array with keys: ' + arr);
+  //for (let key of arr) {
+    //console.log(Object.keys(obj));
+  arr.forEach(function(key) {
+    console.log(key);
+    //if (Object.keys(obj[key]) === boardName) {
+    if (key === boardName) {
+      message = `Board '${boardName}' already exists!`;
+      return message;
+    } else {
+      obj[boardName] = [];
+      message = `Board '${boardName}' was created!`;
+    }
+  });
 
-  if (Object.keys(obj) !== boardName) {
-    obj[boardName] = [];
-    message = `Board ${boardName} was created!`;
-  } else {
-    message = `Board ${boardName} already exists!`;
-
-  }
   return message;
-}
+  }
+
+console.log(createBoard(hello, newBoard));
+console.log(Object.keys(hello));
 //
 // function checkBoardName(obj, boardName) {
 //   for (let name in obj) {
@@ -34,8 +45,6 @@ function createBoard(obj, boardName) {
 // }
 
 //console.log(checkBoardName(hello, newBoard));
-console.log(createBoard(hello, newBoard));
-console.log(Object.keys(hello));
 // ('Cuisine') // returns "Board 'Cuisine' was created"
 // // Adds the board `Cuisine` to `hello`
 // createBoard('Tester Board') // returns "Board already exists"
