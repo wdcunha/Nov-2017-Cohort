@@ -1,0 +1,30 @@
+<< (cheval) ---> is the same as push
+
+https://ruby-doc.org/core-2.2.0/Array.html
+
+
+besides length, it's possible to use size and count for the same purpose, show the what is the size of variable
+
+flatten ---> return a new one-dimensional Array instead of a multi one, keeping the original
+flatten! ---> flatten in the same Array
+
+gem install pry-doc
+
+
+concat ---> put 2 arrays, different than push that you can add any value here necesseraly we need 2 arrays
+
+str.split ----> convert a string to an array
+
+puts include a new line and print none
+[28] pry(main)> print arr
+[3, 5, 2, 6, 9]=> nil
+[29] pry(main)> puts arr
+3
+5
+2
+6
+9
+=> nil
+
+
+#  ---> collection of keys 
