@@ -1,4 +1,4 @@
-let ram = parseInt(Math.floor((Math.random() * 100)+1));
+let ram = parseInt(Math.floor((Math.random() * 100)+1));//sum 1 to limit interval from 1 and multiply per 100 to set until it
 let guess = 0;
 let counter = 0;
 
