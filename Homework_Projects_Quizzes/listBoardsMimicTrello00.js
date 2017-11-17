@@ -10,13 +10,13 @@ const hello = {
 };
 
 function listBoards(obj) {
-  let dash = "\n------------------\n";
+  let dash = "|---------------------";
   let result = dash;
   let count = 0;
   for(let boards in obj) {
     if (obj !== '') {
       count++;
-      result += `\n${count}- ${boards}\n${dash}`;
+      result += `\n|${count}- ${boards}\n${dash}\n|>${obj[boards].join(`\n|>`)}\n${dash}`;
     } else {
       result = "There's no data to print!";
       return result;
@@ -25,4 +25,4 @@ function listBoards(obj) {
   return result;
 }
 
-console.log(listBoards(hello));
+console.log(listBoards(hello['Tester Board']));

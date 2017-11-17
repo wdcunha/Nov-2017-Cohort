@@ -6,15 +6,17 @@ const hello = {
     },
     'Dreams': {
       'Wish List': ['Conquer the Seven Kingdoms', 'Get my baby back', 'My hand needs to chill'],
-    }
+    },
+    'Cuisine': {
+      'Region':['African', 'European', 'Brazilian', 'Asian'] }
 };
 
-function listBoards(obj) {
+function listBoards(boardName) {
   let dash = "\n------------------\n";
   let result = dash;
   let count = 0;
-  for(let boards in obj) {
-    if (obj !== '') {
+  for(let boards in boardName) {
+    if (boardName !== '') {
       count++;
       result += `\n${count}- ${boards}\n${dash}`;
     } else {

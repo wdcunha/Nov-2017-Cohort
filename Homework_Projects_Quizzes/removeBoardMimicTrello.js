@@ -15,16 +15,10 @@ const hello = {
 };
 
 board = "Cuisine";
-//console.log(Object.keys(hello));
 
 function removeBoard(obj, boardName) {
   let arr = Object.keys(obj);
-  //console.log('Array with keys: ' + arr);
-  //for (let key of arr) {
-    //console.log(Object.keys(obj));
   arr.forEach(function(key) {
-    //console.log(key);
-    //if (Object.keys(obj[key]) === boardName) {
     if (key === boardName) {
       delete(obj[boardName]);
       message = `Board '${boardName}' was removed!`;
@@ -37,4 +31,3 @@ function removeBoard(obj, boardName) {
 }
 
 console.log(removeBoard(hello, board));
-//console.log(Object.keys(hello));
