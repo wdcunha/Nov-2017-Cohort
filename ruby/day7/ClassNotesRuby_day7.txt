@@ -1,0 +1,63 @@
+Hash ---> like an object in javascript, it can have any kind of data as keys, different than js that can have just strings
+[9] pry(main)> user_info= Hash.new('Not Provided')
+=> {}
+[10] pry(main)> user_info['Name'] = 'Well'
+=> "Well"
+[11] pry(main)> user_info['Age'] = 44
+=> 44
+[12] pry(main)> user_info['city']
+=> "Not Provided"
+[13] pry(main)> user_info = Hash.new(0)
+=> {}
+
+
+symbol --->  it is used the same spot of memory, making it imutable and they are started with ':', as strings in javascript
+:first_name
+[19] pry(main)> a = 'hello'
+=> "hello"
+[20] pry(main)> b = 'hello'
+=> "hello"
+[21] pry(main)> a.object_id
+=> 47357693774140
+[22] pry(main)> b.object_id
+=> 47357693871580
+[23] pry(main)> c = :hello
+=> :hello
+[24] pry(main)> d = :hello
+=> :hello
+[25] pry(main)> c.object_id
+=> 2117788
+[27] pry(main)> d.object_id
+=> 2117788
+
+keys are great candidates to be used like symbol
+[28] pry(main)> personal_info = {:first_name => 'Well', :last_name => 'Cunha'}
+=> {:first_name=>"Well", :last_name=>"Cunha"}
+[31] pry(main)> personal_info = {'first_name' => 'Well', 'last_name' => 'Cunha'}
+=> {"first_name"=>"Well", "last_name"=>"Cunha"}
+[32] pry(main)> personal_info['first_name']
+=> "Well"
+[33] pry(main)> personal_info[:first_name]
+=> nil
+
+paragraphs are strings
+1) split the text for array of words
+2) build a Hash to store frequences
+3) loop to the array count (increment) the frequence (value in Hash) by 1; if doesn't exist? --> set to 1
+
+
+Advisable to not use return if just has a line at the end of function, ommit it
+
+Piece of code or method without name is called anonymous
+
+When using map, you cannot use print because returning something is important, different than each that doesn't matter
+
+add = lambda{|a,b| a+b}
+=> #<Proc:0x00005624a5612e78@(pry):39 (lambda)>
+[41] pry(main)> add.call(4,5)
+=> 9
+
+
+||=  ---> conditional assignmets, that is used for
+
+in ruby falsy is considered just nil and 

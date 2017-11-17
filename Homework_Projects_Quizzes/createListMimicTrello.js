@@ -11,7 +11,9 @@ const hello = {
     },
     'Dreams': {
       'Wish List': ['Conquer the Seven Kingdoms', 'Get my baby back', 'My hand needs to chill'],
-    }
+    },
+    'Cuisine': {
+      'Region':['African', 'European', 'Brazilian', 'Asian'] }
 };
 
 board = "Cuisine";
@@ -21,18 +23,17 @@ function createList(boardName, listName) {
   let arr = Object.keys(boardName);
   arr.forEach(function(key) {
     if (key !== boardName) {
-      message = `Board '${boardName}' already exists, so it cannot be added!`;
+      message = `Board '${boardName}' doesn't exist, so your List cannot be added!`;
       return message;
-    } else if (boardName[key] != ) {
-
-    } {
+    } else if (boardName[key] != listName) {
+      message = `The list '${boardName[key]}' already exists, so your List cannot be added!`;
+      return message;
+    } else {
       boardName[] = [];
       message = `Board '${boardName}' was created!`;
     }
   });
-
   return message;
-
 }
 
 console.log(listBoards(hello[board],list));

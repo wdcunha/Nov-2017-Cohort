@@ -1,0 +1,35 @@
+***Class and objects
+Object Oriented Program  --->
+
+# When using Pry you can load a file by doing:
+# `load './cookie.rb'` or `require './cookie.rb'`
+# require will not load the file if it has been `required` or loaded already.
+# this is useful when you have a big project so if the file is loaded once no
+# need to reload it again.
+# `load` is useful when you developing and making lots of changes to the file
+# then it will force loading the file even if it's been previously loaded.
+
+***when you define arguments in the constructor:
+def initialize(sugar, flour)
+
+you need to pass those ones when call the class or it'll give errror:
+c = Cookie.new(10,15)
+
+$ before the variable name become it global, what is a problem and won't be used because of it
+
+***attr_accessor :flour
+  # is equivalent to:
+  # attr_reader :flour
+  # attr_writer :flour
+To call it: just call flour
+
+# def sugar=(new_amount)
+  #   @sugar = new_amount
+  # end
+
+**
+when a class inherits another, you need to pass all arguments present in the initialize methods
+
+
+**
+cookie_bag
