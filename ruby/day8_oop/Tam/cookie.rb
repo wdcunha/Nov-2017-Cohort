@@ -25,7 +25,7 @@ class Cookie
   # def sugar
   #   @sugar
   # end
-  # the line belowÂ ð is equivalent to the method above ð
+  # the line below is equivalent to the method above
   attr_reader :sugar
 
   # def set_sugar(new_amount)

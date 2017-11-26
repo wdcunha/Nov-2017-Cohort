@@ -1,0 +1,93 @@
+* {
+  border-radius: 5px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  min-height: 700px;
+}
+
+main > section.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 6;
+  margin-right: 20px;
+}
+
+main > aside.sidebar {
+  flex-grow: 1;
+  width: 40%;
+  min-width: 200px;
+  max-width: 400px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.posts > article.post, .articles > article.article {
+  background-color: rgba(0,0,0,0.1);
+  width: calc(100% - 60px);
+  min-height: 140px;
+  height: auto;
+  padding: 20px;
+}
+
+.posts > article.post {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.posts > article.post:not(:last-child),
+.articles > article.article:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.post img, .article img {
+  background-image: url('./mountain.JPG');
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+  background-position: center;
+  margin: 20px;
+  min-width: 200px;
+  min-height: 100px;
+}
+
+.post .text {
+  height: 60%;
+  max-width: 60%;
+  flex-grow: 3;
+  margin-right: 20px;
+
+}
+
+footer {
+  display: flex;
+  width: 100%;
+}
+
+footer > section {
+  width: 30%;
+  display: flex;
+}
+
+footer article {
+  margin-right: 20px;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.articles > article.article:first-child {
+  min-height: 300px;
+}
+
+.article > img {
+  float: left;
+}

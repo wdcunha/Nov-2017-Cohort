@@ -1,0 +1,26 @@
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 14;
+}
+
+form {
+  width: 80%;
+}
+* {
+  /* `inherit` is a special value usable with nearly CSS properties. It tells
+     property to use the value of the corresponding the elements parent recursively
+     until it finds a defined value. */
+  font-family: inherit;
+}
+
+html {
+  background-color: whitesmoke;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  margin: 15px;
+}

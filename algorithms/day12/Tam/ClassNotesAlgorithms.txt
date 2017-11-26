@@ -1,0 +1,23 @@
+memmory: short term  store
+
+HD or SSD: long term store
+
+1 Byte: 8 bits = 256
+
+Each block is the less piece of memmory is called Byte, where data is addressed
+
+2^8 it's the maximum which is possible to store
+
+
+Garbage colected is defined when we close the curly brackets
+
+F I F O ----> First-In First-Out
+L I F O ----> Last-In First-Out
+
+Stack fills up (LIFO)
+
+JavaScript is not multithread
+
+Heap defined that var is not mutable to not conflict the same address
+
+stackoverflow exception: formal term infinity loop

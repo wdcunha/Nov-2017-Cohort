@@ -7,6 +7,19 @@ arr.join('-')
 > sentence.join('-');
 'I-want-to-say-hello'
 
+*********************************************************************
+[  {sort() { console.log("sorting")} },
+  {},
+  {}
+]
+
+for (let item of array) {
+  // if my item is an object
+  // loop through it's properties
+
+}
+*********************************************************************
+
 array.push('1')  ===> add value to the end of array
 > sentence.push('for')
 6

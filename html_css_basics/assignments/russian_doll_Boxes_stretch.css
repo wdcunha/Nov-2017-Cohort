@@ -1,0 +1,33 @@
+div {
+  border-bottom-right-radius: 100%;
+}
+
+#first {
+  background-color: blue;
+  width: 800px;
+  height: 700px;
+}
+
+#second {
+  background-color: green;
+  width: 550px;
+  height: 500px;
+}
+
+#third {
+  background-color: yellow;
+  width: 350px;
+  height: 300px;
+}
+
+#forth {
+  background-color: orange;
+  width: 200px;
+  height: 170px;
+}
+
+#fifth {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}

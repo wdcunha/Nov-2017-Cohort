@@ -1,0 +1,30 @@
+
+#first {
+  background-color: blue;
+  width: 1250px;
+  height: 600px;
+}
+
+#second {
+  background-color: green;
+  width: 550px;
+  height: 500px;
+}
+
+#third {
+  background-color: yellow;
+  width: 350px;
+  height: 300px;
+}
+
+#forth {
+  background-color: orange;
+  width: 200px;
+  height: 170px;
+}
+
+#fifth {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
