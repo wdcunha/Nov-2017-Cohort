@@ -1,0 +1,29 @@
+<%- include('./partials/header') %>
+  <body>
+    <h1>Welcome to the Express Demo!</h1>
+
+  </body>
+</html>
+<%- include('./partials/footer') %>
+
+<%# I am a comment. I will not show on the page! %>
+
+<% if (count > 5) { %>
+  <h1>Count is greater than 5!</h1>
+<% } %>
+
+
+<h1>Count is greater than 5!</h1>
+
+<% if (isRed) { %>
+  <h1>It is red!</h1>
+<% } else { %>
+  <h1>It is not colored</h1>
+<% } %>
+
+
+<ul>
+<% for (let i = 1; i <= 10; i += 1) { %>
+  <li>Item number #<%= i %></li>
+<% } %>
+</ul>

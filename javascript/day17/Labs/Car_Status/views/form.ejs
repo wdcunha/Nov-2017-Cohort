@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Car Form</title>
+  </head>
+  <body>
+    <h1>Fill out the Form bellow</h1>
+
+    <form action="/form" method="POST">
+
+      <div>
+        <label for="fullName">Full Name</label> <br/>
+        <input type="text" name="fullName" id="fullName" value="">
+      </div>
+
+      <%# <div>
+        <label for="year">Car year</label> <br/>
+        <input type="text" name="year" id="year" value="">
+      </div>%>
+
+      <div>
+        <label for="year">Car year</label> <br/>
+        <select name="year" id="year">
+          <% for (let i = 2021; i >= 1950; i -= 1) { %>
+            <option value="<%= i %>"><%= i %></option>
+            <li>Item number #<%= i %></li>
+          <% } %>
+        </select>
+      </div>
+
+      <div>
+        <br>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+  </body>
+</html>
