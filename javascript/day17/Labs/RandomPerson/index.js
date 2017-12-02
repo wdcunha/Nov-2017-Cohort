@@ -14,16 +14,17 @@ app.get('/home', (request, response) => {
   response.render('home');
 });
 
-app.get('/form', (request, response) => {
-  response.render('form');
+app.get('/pick_random', (request, response) => {
+  response.render('pick_random');
 });
 
-app.post('/form', (request, response) => {
+app.post('/pick_random', (request, response) => {
   const body = request.body;
-  const fullName = body.fullName;
-  const year = body.year;
+  const names = body.names;
+  let arr = names.split(',');
+  let result = arr[Math.floor(Math.random() * arr.length)];
 
-  response.render('form_thankYou', {fullName: fullName, year: year});
+  response.render('result_pick_random', {result: result});
 });
 
 app.get('/contact_us', (request, response) => {
@@ -38,11 +39,13 @@ app.post('/contact_us', (request, response) => {
   response.render('thankYou', {fullName: fullName, message: message});
 });
 
+var time = new Date();
+
 const DOMAIN = 'localhost';
 const PORT = '3002';
 app.listen(PORT, DOMAIN, () => {
 
-  console.log(`ð» Server listenning on http://${DOMAIN}:${PORT}`);
+  console.log(`Updated at: ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()} ---» Server Person Random listenning on http://${DOMAIN}:${PORT}`);
 });
 
 
