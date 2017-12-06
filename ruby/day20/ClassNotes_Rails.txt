@@ -1,0 +1,6 @@
+gem install rails --nod-rdoc --no-ri
+
+atom ~/.railsrc
+
+
+http://localhost:3000/rails/info/routes

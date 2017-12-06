@@ -5,17 +5,30 @@ ps aux | grep postgres
 
 
 /usr/lib/postgresql/9.6/bin/pg_ctl -D /var/lib/postgresql/9.6/main -l logfile start
+
 Ver Cluster Port Status Owner    Data directory               Log file
 9.6 main    5432 down   postgres /var/lib/postgresql/9.6/main /var/log/postgresql/postgresql-9.6-main.log
 update-alternatives: using /usr/share/postgresql/9.6/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz)
 
+----------------------------------------------------
 
-pgadmin
+/usr/lib/postgresql/9.6/bin/pg_ctl -D /var/lib/postgresql/9.6/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory               Log file
+9.6 main    5432 down   postgres /var/lib/postgresql/9.6/main /var/log/postgresql/postgresql-9.6-main.log
+update-alternatives: using /usr/share/postgresql/9.6/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up postgresql (9.6+184ubuntu1.1) ...
+Setting up postgresql-contrib-9.6 (9.6.6-0ubuntu0.17.10) ...
+Processing triggers for systemd (234-2ubuntu12.1) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+----------------------------------------------------------
+
+>>>> pgadmin
 sudo apt-get install pgadmin3
 
 creating a user in postgres to add server on pgadmin
 sudo -u postgres psql
-postgres=# CREATE USER wellington WITH password '1234';
+  postgres=# CREATE USER wellington WITH password '1234';
 CREATE ROLE
 postgres=# ALTER USER wellington WITH SUPERUSER;
 ALTER ROLE
