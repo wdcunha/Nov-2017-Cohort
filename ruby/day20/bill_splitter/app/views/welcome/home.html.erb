@@ -1,0 +1,27 @@
+<h1>Enter your bill info below: </h1>
+
+<%= form_tag root_path do %>
+	<div>
+		<%= label_tag :amount %>
+		<%= number_field_tag :amount %>
+	</div>
+	<div>
+		<%= label_tag :tax %>
+		<%= number_field_tag :tax %>
+	</div>
+	<div>
+		<%= label_tag :tip %>
+		<%= number_field_tag :tip %>
+	</div>
+	<div>
+		<%= label_tag :number_of_people %>
+		<%= number_field_tag :number_of_people %>
+	</div>
+	<%= submit_tag(value ="Submit") %>
+
+<% end %>
+
+
+<% if @each %>
+	<h1>Each person owes: <%= @each %></h1>
+<% end %>

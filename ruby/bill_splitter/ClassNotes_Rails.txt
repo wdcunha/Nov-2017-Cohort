@@ -4,6 +4,7 @@ atom ~/.railsrc
 
 
 http://localhost:3000/rails/info/routes
+rails routs  **** this is the same of above in terminal
 
 -T
 -d postgresql
@@ -17,4 +18,9 @@ http://localhost:3000/rails/info/routes
 1) rails new project_name
    rails new project_name -T -d postgresql  (if need db - use Postgres as our database instead of the default one: SQLite)
 2) check if it will have a own git repo, if not, delete .git
-3)
+3) define routes
+4) rails g controller project_name
+5) define an action within controller
+  def index
+6) create erb files (pages)
+7)

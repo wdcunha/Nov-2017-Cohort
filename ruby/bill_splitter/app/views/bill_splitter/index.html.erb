@@ -1,0 +1,32 @@
+
+<%= form_tag home_path do %>
+
+  <div>
+    <%= label_tag :amount %>
+    <%= text_field_tag :amount %>
+  </div>
+  <div>
+  <div>
+    <%= label_tag :taxes %>
+    <%= text_field_tag :taxes %>
+  </div>
+  <div>
+    <%= label_tag :tip %>
+    <%= text_field_tag :tip %>
+  </div>
+  <div>
+    <%= label_tag :number_people %>
+    <%= text_field_tag :number_people %>
+  </div>
+  <!-- <div>
+    <%= label_tag :message %>
+    <%= text_area_tag :message %>
+  </div> -->
+
+  <%= submit_tag 'Calculate' %>
+
+<% end %>
+
+<% if @each_person %>
+  <h1> Each person must pay: <%= @each_person %></h1>
+<% end %>
