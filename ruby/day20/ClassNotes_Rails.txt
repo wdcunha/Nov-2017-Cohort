@@ -18,3 +18,7 @@ http://localhost:3000/rails/info/routes
    rails new project_name -T -d postgresql  (if need db - use Postgres as our database instead of the default one: SQLite)
 2) check if it will have a own git repo, if not, delete .git
 3)
+
+rails g migration add_view_count_to_questions  view_count:integer
+
+rails db:migrate:status  ----> see the order of files that is running and the order matters
