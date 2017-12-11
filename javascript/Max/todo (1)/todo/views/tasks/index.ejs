@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do</title>
+  </head>
+  <body>
+
+    <form action="/tasks" method="post" enctype="multipart/form-data">
+      <textarea name="title" rows="8" cols="80"></textarea>
+      <input type="file" name="photo" value="">
+      <button type="submit" name="submit">Submit</button>
+    </form>
+
+    <% for (let task of tasks) { %>
+      <p>
+        <%= task.title %>
+      </p>
+      <img src="<%= task.photo_path %>" alt="">
+      <p>
+        <%= task.created_at %>
+      </p>
+    <% } %>
+  </body>
+</html>
