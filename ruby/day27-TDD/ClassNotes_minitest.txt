@@ -1,0 +1,33 @@
+gem install minitest
+
+>>>> Rspec
+https://github.com/rspec/rspec-rails
+
+1) rails new fundsy -T -d postgresql
+2) rails db:create
+3) gem 'rspec-rails' (put it in Gemfile just inside :development group)
+4) bundle
+5) rails g rspec:install (creates 3 files)
+6) rails g model campaign title description:text goal:integer end_date:datetime
+7) rails db:migrate
+8) add code to campaign_spec.rb inside subfolder model of spec folder
+9) add code to campaign.rb
+
+rspec ./spec/models/campaign_spec.rb:37
+
+**** in rails_helper.rb inside spec folder, there's option to abort in
+case of production mode running. There's a line about migration (line 27)
+****
+
+
+
+
+
+
+
+
+
+
+
+
+####
