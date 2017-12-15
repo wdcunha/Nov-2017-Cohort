@@ -1,0 +1,38 @@
+The same project from day27-TDD (fundsy)
+
+1) rails g controller campaigns
+   rails g rspec:controller campaigns  -----> generate an controller inside spec folder
+2) edit campaign_controller_spec.rb to give actons needed to test
+3) rspec spec/controllers/campaigns_controller_spec.rb
+4) add lines to campaign_controller (need to see if was created)
+5) add line in routes.rb
+6) add in Gemfile
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'hirb'
+
+   *bundle
+7) add function describe to test show in campaign_controller_spec
+8) rails g factory_bot:model campaign  ----> it creates a directory factory inside spec folder
+9) add lines to campaigns.rb inside factories folder
+10) created new and show in views for campaign as well added lines in controller
+11) created a function inside campaigns_controller_spec
+12) edited lines of show and it (assigns)
+13) added describe create
+14) create a campaign in db putting line in campaign_controller
+15) added describe destroy
+16) added before_action and def destroy in campaign_controller
+
+
+pry(main)> FactoryBot.create(:campaign)
+pry(main)> FactoryBot.attributes_for(:campaign)
+
+rspec spec/controllers/campaigns_controller_spec.rb
+rspec --help
+rspec -f d  ----> show everything is running
+
+
+pry(main)> {a: 1}.merge({b: 2})
+=> {:a=>1, :b=>2}

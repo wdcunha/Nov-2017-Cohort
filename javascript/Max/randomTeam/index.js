@@ -21,7 +21,7 @@ app.post('/', function (req, res) {
   //   winner = namesArr[Math.floor(namesArr.length*Math.random())];
   // }
 
-  // var array = ['jim','jake','jimes','rob','paps','richie','joe'];
+  // var array = ['jim','jake','jimes','rob','paps','richie','joe','paul','john','robert','carl','sand','patrickson','aranda','sam','beverly'];
   // jim,jake,jimes,rob,paps,richie,joe,paul,john,robert,carl,sand,patrickson,aranda,sam,beverly
   function shuffleArray(array) {
 
@@ -50,9 +50,37 @@ app.post('/', function (req, res) {
       return ret;
   }
 
+    function numberPerTeam(arr, n){
+      let input = [];
+      while (arr.length > 0) {
+        console.log(input.push(arr.splice(0, n)));
+      };
+      if ((input[input.length - 2].length - input[input.length - 1].length) > 1){
+        input[0].push(input.pop().join(", "));
+      }
+      console.log(input);
+      return input;
+    }
+
+  function distributePerTeam(names, numberPerTeam) {
+      var ret = {};
+      var teamCounter = 0;
+      var numbNames = (names.length / numberPerTeam);
+      for (var i = 0; i < names.length; ++i) {
+          if (!ret["Team" + (teamCounter + 1)]) {
+              ret["Team" + (teamCounter + 1)] = [];
+          }
+          ret["Team" + (teamCounter + 1)].push(names[i]);
+          if (++teamCounter == numberOfTeams) {
+              teamCounter = 0;
+          }
+      }
+      return ret;
+  }
+
   var newarray =(shuffleArray(namesArr));
-  var arrays = distributePlayers(newarray, 3);
-  console.log(arrays);
+  var arrays = numberPerTeam(newarray, 3);
+  // console.log(arrays);
 
 
 

@@ -1,5 +1,8 @@
 gem install minitest
 
+
+
+
 >>>> Rspec
 https://github.com/rspec/rspec-rails
 
@@ -12,6 +15,9 @@ https://github.com/rspec/rspec-rails
 7) rails db:migrate
 8) add code to campaign_spec.rb inside subfolder model of spec folder
 9) add code to campaign.rb
+
+
+
 
 rspec ./spec/models/campaign_spec.rb:37
 
