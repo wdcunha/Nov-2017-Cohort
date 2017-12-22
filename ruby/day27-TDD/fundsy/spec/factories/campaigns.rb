@@ -17,7 +17,7 @@ FactoryBot.define do
     # The sequence takes an attribute and a block. The block
     # will receive a number as argument that is current count
     # of how many times the factory was called.
-    sequence(:title) { |n| "#{Faker::ChuckNorris.fact} - #{n}" } #concatinating the number with the title
+    sequence(:title) { |n| "#{Faker::ChuckNorris.fact} - #{n}" } #concatenating the number with the title
     # description "My description"
     description { Faker::Lorem.paragraph }
     # goal 20000
