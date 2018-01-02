@@ -28,8 +28,12 @@ git pull (necessary after git fetch)
 
 
 git merge  ----> it will merge what was done in branchs  (push it's needed after)
+git checkout a (you will switch to branch a)
+git merge b (this will merge all changes from branch b into branch a)
+git commit -a (this will commit your changes)
+
 (ESC ;wq)
 
 git branch -D fizzbuzz_ruby
-Deleted branch fizzbuzz_ruby (was a605f44).  -----> afer merged, we can delete the branch....it's a best practice, because
- all you need is on the master
+Deleted branch fizzbuzz_ruby (was a605f44).  -----> afer merged, we can delete the
+branch....it's a best practice, because all you need is on the master

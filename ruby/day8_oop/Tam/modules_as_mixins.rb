@@ -1,5 +1,5 @@
 module HelperMethods
-  def random_number
+  def name_display
     name.squeeze(' ').capitalize
   end
 end
@@ -15,9 +15,9 @@ class User
 end
 
 
-# u      = User.new
-# u.name = "tam"
-# puts u.name_display
-# c      = Car.new
-# c.name = "toyota"
-# puts c.name_display
+u      = User.new
+u.name = "tam"
+puts u.name_display
+c      = Car.new
+c.name = "toyota"
+puts c.name_display

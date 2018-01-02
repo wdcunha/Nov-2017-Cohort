@@ -1,7 +1,8 @@
 class Campaign < ApplicationRecord
+  belongs_to :user
   # validates :title, presence: true
-  validates :goal, numericality: {greater_than_or_equal_to: 15}
   validates :title, presence: true, uniqueness: true
+  validates :goal, numericality: {greater_than_or_equal_to: 10}
 
   def upcased_title
     # title.upcase

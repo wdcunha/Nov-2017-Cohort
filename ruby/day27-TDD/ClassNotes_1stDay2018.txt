@@ -1,0 +1,67 @@
+
+1) "before do " is essencial to load something needed
+2) routes, create resource session
+3) created table user
+rails g model user first_name last_name email password_digest
+4) rails db:migrate
+5) added method current_user in application_controller
+   method user_signed_in?
+   authenticate_user!
+6) users.rb in spec/factories:
+   used Faker to feed
+
+   e = "email@google.ca"
+   e.split('@').join('-1@')
+   e.sub('@', '-1@')
+
+   u = FactoryBot.create(:user)
+
+7) changed the line (17) inside before do putting FactoryBot
+8) created a method user to use insted of in line (17 --- now 21)
+9) added let to substitute the method above
+10) commented all line where: campaign = FactoryBot.create(:campaign)
+11) inserted context in line 68
+    method valid_request above this context
+    added a before do inside 'with
+12) campaign controller and inserted :create in before_action
+13) rails g migration add_user_to_campaigns user:references
+14) rails db:migrate
+15) added line has many campaigns to user.rb in model
+16) added line to campaign (belong to user)
+17) in campaigns factories added association :user line
+18) add let in campaign_spec
+19) added in campaign_controller @campaign.user = current_user at line 13 in method create
+20) wrote describe '#edit'
+21) campaigns_controller and added
+22) created edit.html.erb
+23) created route for root
+24) gem 'cancancan'
+    bundle
+    gem 'cancancan'
+    rails g cancan:ability
+
+25) uncommented line 7 (user ||=)
+    added can :manage....
+
+26) campaigns_controller created method authorize_user!
+    before_action :authorize_user
+
+27) added before do at the line inside context 'with non-owner signed in' do
+28) inserted content to context 'with no user signed in'
+29) campaigns_controller
+30) wrote code for context 'with owner signed in'
+    before do for request session
+31) code inside it 'renders the edit template'
+32) code for it 'assigns an instance variable to the campaign being edited'
+33) campaign_controller added :edit for before_action :find_campaign to allow it edit
+34) added describe '#update' do
+35) wrote before do to change data
+    all 'it' in sequence will test about what this one do
+36) implemented it 'saves the changes' do
+37) implemented it 'redirect to the campaign show page' do
+38) campaign_controller added lines for method update
+    before_action :find_campaign needs :update
+39) implemented context 'with invalid parameters'
+    it 'renders the edit template'
+40) added line in campaigns_controller and if
+41) 

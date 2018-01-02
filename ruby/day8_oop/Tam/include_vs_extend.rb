@@ -1,6 +1,6 @@
 module AwesomeMethods
-  def greeting
-    'Hello World!'
+  def greeting(exp)
+    p "Hello World #{exp}!"
   end
 end
 
@@ -20,7 +20,7 @@ class Xyz
 end
 
 
-# c = Class1.new
-# c.greeting("John")
-#
-# Class2.greeting("John")
+c = Abc.new
+c.greeting("John")
+
+Xyz.greeting("Paul")

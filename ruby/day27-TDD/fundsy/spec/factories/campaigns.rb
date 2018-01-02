@@ -9,10 +9,15 @@
 # Factories must ALWAYS generate models that pass all validations!
 FactoryBot.define do
   factory :campaign do
+
     # title "Test"
     # title { Faker::ChuckNorris.fact }
     # sequence(:title) { Faker::ChuckNorris.fact } #concatinating the number with the title
 
+    # This line with auto-create a user with the campaign and
+    # associate the campaign to that user unless you explicitly
+    # give user to campaign factory when its called.
+    association :user, factory: :user
     # Use the sequence method with attributes that must be unique
     # The sequence takes an attribute and a block. The block
     # will receive a number as argument that is current count
