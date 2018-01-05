@@ -1,0 +1,202 @@
+document.querySelectorAll('.team h1')
+document.querySelectorAll('*') # we can iterate with loop for all structure of it
+
+# capital letter matters:
+document.querySelectorAll('#Moneybags-michael')
+[]
+document.querySelectorAll('#moneybags-michael')
+[div#moneybags-michael.doggo.fighter]
+
+toxicTim.nextElementSibling.nextElementSibling
+
+toxicTim.nextSibling
+#text
+#textassignedSlot: nullbaseURI: "file:///home/wellington/CodeCore/Nov-2017-Cohort/jquery/doggo-arena/index.html"childNodes: []length: 0__proto__: NodeListdata: "↵          "firstChild: nullisConnected: truelastChild: nulllength: 11nextElementSibling: div#bumble-bertha.doggo.fighternextSibling: div#bumble-bertha.doggo.fighternodeName: "#text"nodeType: 3nodeValue: "↵          "ownerDocument: documentparentElement: div.rosterparentNode: div.rosterpreviousElementSibling: div#toxic-tim.doggo.fighterpreviousSibling: div#toxic-tim.doggo.fightertextContent: "↵          "wholeText: "↵          "__proto__: Text
+
+toxicTim.parentElement.parentElement.parentElement.parentElement.parentElement
+#next parentElement will return null
+
+
+toxicTim.innerHTML
+"
+            <h1>Toxic Tim</h1>
+          "
+toxicTim.outerHTML
+"<div id="toxic-tim" class="doggo fighter" style="border: medium solid lime;">
+            <h1>Toxic Tim</h1>
+          </div>"
+
+toxicTim.id
+"toxic-tim"
+toxicTim.class
+undefined
+toxicTim.classList
+(2) ["doggo", "fighter", value: "doggo fighter"]
+
+toxicTim.getAttribute('id')
+"toxic-tim"
+toxicTim.getAttribute('class')
+"doggo fighter"
+
+
+document.querySelectorAll('.team')
+(2) [div.team.salmon, div.team.teal]0: div.team.salmonaccessKey: ""align: ""assignedSlot: nullattributes: NamedNodeMap {0: class, 1: style, length: 2}baseURI: "file:///home/wellington/CodeCore/Nov-2017-Cohort/jquery/doggo-arena/index.html"childElementCount: 2childNodes: (5) [text, h1.title, text, div.roster, text]children: (2) [h1.title, div.roster]classList: (2) ["team", "salmon", value: "team salmon"]className: "team salmon"clientHeight: 461clientLeft: 0clientTop: 0clientWidth: 595contentEditable: "inherit"dataset: DOMStringMap {}dir: ""draggable: falsefirstChild: textfirstElementChild: h1.titlehidden: falseid: ""innerHTML: "↵        <h1 class="title">Team Salmon</h1>↵        <div class="roster">↵          <div id="toxic-tim" class="doggo fighter" style="border: medium solid lime; border-radius: 5px;" data-target=".team.salmon">↵            <h1>Toxic Tim</h1>↵          </div>↵          <div id="bumble-bertha" class="doggo fighter">↵            <h1>Bumble Bertha</h1>↵          </div>↵          <div id="nina-the-ninja" class="doggo fighter">↵            <h1>Nina The Ninja</h1>↵          </div>↵        </div>↵      "innerText: "Team Salmon↵Toxic Tim↵Bumble Bertha↵Nina The Ninja↵"isConnected: trueisContentEditable: falselang: ""lastChild: textlastElementChild: div.rosterlocalName: "div"namespaceURI: "http://www.w3.org/1999/xhtml"nextElementSibling: div.team.tealnextSibling: textnodeName: "DIV"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 461offsetLeft: 11offsetParent: bodyoffsetTop: 302offsetWidth: 595onabort: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforepaste: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontextmenu: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonsearch: nullonseeked: nullonseeking: nullonselect: nullonselectstart: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullonvolumechange: nullonwaiting: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwheel: nullouterHTML: "<div class="team salmon" style="background-color: fuchsia;">↵        <h1 class="title">Team Salmon</h1>↵        <div class="roster">↵          <div id="toxic-tim" class="doggo fighter" style="border: medium solid lime; border-radius: 5px;" data-target=".team.salmon">↵            <h1>Toxic Tim</h1>↵          </div>↵          <div id="bumble-bertha" class="doggo fighter">↵            <h1>Bumble Bertha</h1>↵          </div>↵          <div id="nina-the-ninja" class="doggo fighter">↵            <h1>Nina The Ninja</h1>↵          </div>↵        </div>↵      </div>"outerText: "Team Salmon↵Toxic Tim↵Bumble Bertha↵Nina The Ninja↵"ownerDocument: documentparentElement: div.teamsparentNode: div.teamsprefix: nullpreviousElementSibling: nullpreviousSibling: textscrollHeight: 461scrollLeft: 0scrollTop: 0scrollWidth: 595shadowRoot: nullslot: ""spellcheck: truestyle: CSSStyleDeclaration {0: "background-color", alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}tabIndex: -1tagName: "DIV"textContent: "↵        Team Salmon↵        ↵          ↵            Toxic Tim↵          ↵          ↵            Bumble Bertha↵          ↵          ↵            Nina The Ninja↵          ↵        ↵      "title: ""translate: true__proto__: HTMLDivElement1: div.team.teallength: 2__proto__: NodeList
+document.querySelectorAll('.team')[0]
+<div class=​"team salmon" style=​"background-color:​ fuchsia;​">​…​</div>​
+console.dir(document.querySelectorAll('.team')[0])
+VM843:1 div.team.salmon
+
+
+#postioning 2 places the image
+teamSalmonRoster.appendChild(drillBitDarel.cloneNode())
+
+#postioning before some <node>
+teamTealRoster.insertBefore(bumbleBertha, teamTealRoster.children[3])
+
+
+[LAB]: Wiki Hacker
+document.querySelector('h1').innerHTML = '<h1>Wellington</h1>';
+document.querySelector('body').innerHTML = '';
+document.querySelector('.mw-wiki-logo').style.backgroundImage = 'url(https://78.media.tumblr.com/avatar_f36254f687df_128.pnj)';
+>>> stretch:
+for (let x of document.querySelectorAll('p')) {
+ x.innerText = x.innerText.replace("Pug", "Spud");
+ x.innerText = x.innerText.replace("pug", "spud");
+}
+
+[LAB]: Assignment: [Lab] Craigslist
+
+document.querySelector('#logo a:first-child').href
+
+document.querySelector('a[href]')
+
+for (let x of document.querySelectorAll('a[href]')) {
+ x.innerText = "Wellington";}
+
+document.querySelector('#logo a:first-child').href = "https://www.google.ca"
+
+for (let x of document.querySelectorAll('*')) {
+ x.style.fontFamily = "courier";}
+
+[LAB]: Assignment:
+
+
+******************************************************************
+******************** Classmates solutions ************************
+******************************************************************
+https://codecore.certified.in/learning_modules/lab-craigslist-hacker-14/submissions
+
+>>> Assignment: [Lab] Wiki Hacker
+document.querySelector('#firstHeading').innerHTML = 'Shaun'
+document.querySelector('#bodyContent').style.display = 'none'
+document.querySelector('.mw-wiki-logo').style.backgroundImage = 'url(https://i.imgur.com/3KOwIGe.jpg)'
+
+for (let para of document.querySelectorAll('p')) {
+  para.innerHTML = para.innerHTML.replace(/pug/i, 'Spud');
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// lab 2
+document.querySelector('a[href]:first-child')
+document.querySelectorAll('a')
+logo = document.querySelector('#logo')
+logo.innerHTML = 'Hello'
+"Hello"
+body1 = document.querySelector('body')
+body1.style.display = "none"
+for (let node of document.querySelectorAll('a')) {
+ node.innerText = 'Raymond';
+}
+logoLink = document.querySelector('#logo a[href]')
+logoLink.href = 'http://www.google.ca'
+for (let node of document.querySelectorAll('body')){
+  node.style.fontFamily = 'papyrus'
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+let node = document.querySelectorAll('.cal td');
+for (i = 0; i < node.length; i++) {
+   if (i % 2) {
+     node[i].style.backgroundColor = 'yellow';
+   }
+   else {
+     node[i].style.backgroundColor = 'green';
+   }
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+for (let node of document.querySelectorAll('p')) {
+ node.innerText = node.innerText.replace("Pug", "Spud");
+ node.innerText = node.innerText.replace("pug", "spud");
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+document.querySelectorAll('tr:nth-child(even)').forEach(node => {
+  node.querySelectorAll('td:nth-child(even)').forEach(node => {
+    node.style.backgroundColor = 'blue'
+  })
+})
+document.querySelectorAll('tr:nth-child(odd)').forEach(node => {
+  node.querySelectorAll('td:nth-child(odd)').forEach(node => {
+    node.style.backgroundColor = 'blue'
+  })
+})
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+for (let ap of document.querySelectorAll('a'||'p')) {
+    if (ap.innerHTML.includes('es')) {
+    ap.style.display = 'none';
+  }
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Change the text color of all file name and directory name links to red.
+javascript
+let filewrapAnchors = document.querySelector('.file-wrap').querySelectorAll('a');
+for (let node of filewrapAnchors) {
+    node.style.color = 'red';
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Delete all file and directory icons from the file explorer (the big box below the Clone or download button).
+
+javascript
+let iconFile = document.querySelectorAll('.octicon-file-directory');
+let iconText = document.querySelectorAll('.octicon-file-text');
+for (let node of iconFile) {
+  node.remove();
+}
+for (let node of iconText) {
+  node.remove();
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Replace all topic tags (e.g. javascript, arduino, chip. etc) with the first tags, javascript
+
+javascript
+let js = document.querySelectorAll('.topic-tag')[0].outerHTML
+let topicTagLink = document.querySelectorAll('.topic-tag:not(:first-child)');
+for (let node of topicTagLink) {
+  node.outerHTML = js;
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+let johnny = document.querySelector('#readme img:first-child');
+  let cat = document.querySelector('.header-logo-invertocat')
+  cat.remove();
+  let johnny_five = johnny.cloneNode(true);
+  johnny_five.style.id ='logo';
+  johnny_five.style.width = "32px";
+  johnny_five.style.height = "32px";
+  let logoHome = document.querySelector('.d-flex.flex-justify-between');
+  logoHome.prepend(johnny_five);
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

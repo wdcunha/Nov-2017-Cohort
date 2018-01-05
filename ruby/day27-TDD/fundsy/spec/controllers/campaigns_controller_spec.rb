@@ -78,7 +78,6 @@ RSpec.describe CampaignsController, type: :controller do
       end
 
       context 'with valid parameters' do
-
         it 'creates a new campaign in the database' do
           count_before = Campaign.count
           valid_request

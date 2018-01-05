@@ -1,0 +1,66 @@
+$('a')
+
+$('a')[1]
+
+$('a')[1].href   # takes all node: <a href="http://www.wikipedia.org">Wikipedia</a>
+
+$('a').eq(1).href   #take just the address ("http://www.wikipedia.org")
+$('a').eq(1).attr('href')   #take just the address ("http://www.wikipedia.org")
+
+$('a').attr('href', 'http://www.nyan.cat'); # alter all links in the page without a loop
+$('a').eq(2).attr('href', 'http://www.nyan.cat'); #just the third link
+
+$('a').attr('class', 'highlight');
+
+  //doesn't return anything because index comes first than node)
+$('a').map((node, index) => [node, index])
+  //map is provided by jquery
+$('a').map((node, index) => console.log(node, index))
+    0 <a href=​"http:​/​/​www.google.com">​Google​</a>​
+    1 <a href=​"http:​/​/​www.wikipedia.org">​Wikipedia​</a>​
+    2 <a href=​"http:​/​/​www.facebook.com">​Facebook​</a>​
+    3 <a href=​"http:​/​/​vancouver.craigslist.ca">​Craigslist​</a>​
+    4 <a href=​"http:​/​/​www.facebook.com">​Another Facebook​</a>​
+    5 <a>​Link to Nowhere​</a>​
+
+$('a').map((index,node) => node.innerHTML)
+$('a').map((index,node) => $(node).html()) //same effect of line above
+
+$('#reset').html('Changed') ---> change just one button
+$('.button').html('Changed')  ----> change every class with button name
+
+
+$('td').parent()
+$('tr').children()
+$('td').parents('body')
+$('td').parents('section')
+
+$(` <div class="container"></div>`)
+
+$('section').prepend(`<div class="container"></div>`)
+
+$('.container').append(
+  $(`
+  <div class="container"></div>
+  `)
+    $(`
+    <div class="small black square shape"></div>'
+    `)
+)
+$('section:first-of-type').prepend(
+  $(`<div class="container"></div>`)
+    .prepend(
+      $('<div class="small black square shape"></div>')
+    )
+);
+
+$('.circle').removeClass('circle').addClass('diamond');
+$('a').attr('class', 'highlight')
+
+$('tr').on('mouseenter', e => {
+  $('e.currentTarget').attr('class', 'highlight');
+});
+
+
+
+\\
