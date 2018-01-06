@@ -62,5 +62,56 @@ $('tr').on('mouseenter', e => {
 });
 
 
+if($('.shape').find('.small')){
+console.log(e.currentTarget)
+}});
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+https://codecore.certified.in/learning_modules/lab-part-2-10/submissions
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                        [LAB] 1:
+
+$('.shape').on('mouseenter', e => {
+  $(e.currentTarget).toggleClass('highlight')
+});
+
+$('.shape.small').on('click', e => {
+    $(e.currentTarget).toggle();
+  });
+
+
+  $('.shape.medium').on('click', e => {
+    $(e.currentTarget).removeClass('medium').addClass('small');
+    });
+
+**********************************************************************
+                        [LAB] 2:
+**********************************************************************
+
+$(`
+<tr>
+  <td>0</td>
+  <td>-</td>
+</tr>
+`)
+
+$('tbody').prepend(
+  $(`
+  <tr>
+    <td>0</td>
+    <td>-</td>
+  </tr>
+`)
+)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+$("#form-1:even").on('click', e => {
+  $("#form-message").append(`
+    $("#form-1 input:first-child").value
+  `)
+});
+
+
+
 
 \\
