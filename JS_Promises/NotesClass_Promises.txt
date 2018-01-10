@@ -1,0 +1,70 @@
+new Promise()
+VM174:1 Uncaught TypeError: Promise resolver undefined is not a function
+    at new Promise (<anonymous>)
+    at <anonymous>:1:1
+
+
+new Promise(() => {})
+Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
+
+
+new Promise((resolve, reject) => {
+	resolve('Hello')
+})
+Promise {[[PromiseStatus]]: "resolved", [[PromiseValue]]: "Hello"}
+
+new Promise((resolve, reject) => {
+	reject('Bye')
+})
+Promise {[[PromiseStatus]]: "rejected", [[PromiseValue]]: "Bye"}
+VM202:2 Uncaught (in promise) Bye
+
+new Promise((resolve, reject) => {
+	resolve('Hello')
+	reject('Bye')
+})
+Promise {[[PromiseStatus]]: "resolved", [[PromiseValue]]: "Hello"}
+
+
+new Promise((resolve, reject) => {
+	reject('Bye')
+	resolve('Hello')
+})
+Promise {[[PromiseStatus]]: "rejected", [[PromiseValue]]: "Bye"}
+VM224:2 Uncaught (in promise) Bye
+
+
+function flipCoin()  {
+	return new Promise((resolve, reject) => {
+		const coinFace = [ 'HEADS', 'TAILS'][Math.floor(Math.random() * 2)]
+		resolve(coinFace);
+    });
+}
+
+function flipCoinCb(cbFn)  {
+	return new Promise((resolve, reject) => {
+		const coinFace = [ 'HEADS', 'TAILS'][Math.floor(Math.random() * 2)]
+		cbFn(coinFace);
+    });
+}
+
+// open a debbuger as written
+flipCoin()
+.then(resolvedValue => {
+	debugger
+})
+
+
+let coin = flipCoin()
+coin instanceof Promise
+coin.then(result => console.log(result))
+
+
+
+************
+
+inside node (terminal)...it shows content inside the file indicated
+
+fs.readFile("index.js", (err, data) => {
+... console.log(data.toString())
+... })

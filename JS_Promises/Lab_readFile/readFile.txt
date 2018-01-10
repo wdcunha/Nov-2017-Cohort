@@ -1,0 +1,6 @@
+<start>
+
+This a text just to try read file code using Promise.
+
+
+<End>
