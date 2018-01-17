@@ -5,7 +5,7 @@
 4) npm r db:setup
 5) npm run start
 6) added code to main.js to show how fetch works
-7)
+7) font awesome goes in the header, putting
 
 
 
@@ -72,9 +72,71 @@ function createMessage (message) {
 
 createMessage({body: 'owww baddddd!!!!'})
 
+*********************************  image in battle chat
+function createMessage (text) {
+  return fetch(
+   '/messages/',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({body: text})
+    }
+  );
+}
 
 
+createMessage(`<img style= 'height: 180px;' src='https://upload.wikimedia.org/wikipedia/commons/e/e8/P40_Kittyhawk_imga_crop.jpg'>`)
 
+*************************************  replacing
+function replaceMessage (id, text) {
+  return fetch(
+    `/messages/${id}`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({body: text})
+    }
+  )
+}
+
+replaceMessage(193471,'changed!')
+
+*************************************  copying
+function createMessage (text) {
+  return fetch(
+   '/messages/',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({body: text})
+    }
+  );
+}
+
+
+function copyMessage (id) {
+  return fetch(
+    `/messages`,
+  )
+    .then(res => res.json())
+    .then(messages => {
+      const message = messages.find(m => m.id === id);
+      return createMessage(message.body);
+     })
+}
+
+copyMessage(193473)
+
+
+***** filter message
+
+1) DOM manipulation put code to filter
+2) renderMessages
+3)
+
+****** search bar
+1) added lines in DOM manipulation
+2) renderMessages
 
 
 

@@ -34,7 +34,8 @@ li {
   border-radius: 5px;
 }
 
-textarea {
+textarea,
+input:not([type='submit']) {
   box-sizing: border-box;
   width: 100%;
   border: 2px solid #ddd;
@@ -43,7 +44,8 @@ textarea {
   padding: 10px;
 }
 
-input[type='submit'] {
+input[type='submit'],
+button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -60,4 +62,9 @@ input[type='submit'] {
   user-select: none;
   color: #ffffff;
   background-color: #18bc9c;
+}
+
+
+button.selected {
+  background-color: #009070;
 }

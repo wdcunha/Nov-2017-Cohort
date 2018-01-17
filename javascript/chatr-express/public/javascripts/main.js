@@ -1,4 +1,5 @@
 // Write chatr code here!
+// Write chatr code here!
 
 
 function qS (query, node) {
@@ -75,6 +76,8 @@ function qSA (query, node) {
 // To do this, fetch can take an object as a second argument.
 // Inside, we can specify a `method` property where its value
 // is an HTTP verb (which you should write in uppercase).
+/**
+ *
 fetch(
 	'/messages',
   {
@@ -87,6 +90,7 @@ fetch(
   	body: JSON.stringify({content: 'Stuff stuff'})
   }
 )
+*/
 
 
 // fetch(
@@ -100,6 +104,17 @@ fetch(
 function getMessages () {
   return fetch(`/messages`)
     .then(res => res.json());
+}
+
+function flagMessage (id, flagged) {
+  console.log(flagged)
+  return fetch(`/messages/${id}`,
+    {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({flagged})
+    }
+  )
 }
 
 
@@ -127,19 +142,34 @@ function destroyMessage (id) {
 }
 
 // Render Functions
-
+/**
+<a data-id="${message.id}" data-flagged="${message.flagged}"
+   class="flag-button" href>${message.flagged ? 'Unflag' : 'Flag'}
+</a>
+ *
+ */
 function renderMessages (messages = []) {
-  return messages
+  // return messages.filter(message => filter ? message.flagged : true)
+  return messages.filter(message =>
+    (filter ? message.flagged : true)
+    && (searchTerm.length === 0
+      ? true
+      : message.username && message.username.includes(searchTerm))
+  )
     .map(message => `
       <li>
         <p>
-          <strong>${message.id}</strong>
+          <strong>${message.id}- </strong>
+          <strong>${message.username || ''}: </strong>
           ${message.content}
         </p>
         <a data-id="${message.id}" class="delete-button" href>Delete</a>
+        <i data-id="${message.id}"
+           data-flagged="${message.flagged}"
+           class="flag-button fa fa-lg fa-flag${message.flagged ? '' : '-o' }">
+        </i>
       </li>
-    `)
-    .join('');
+    `).join('');
 }
 
 
@@ -148,7 +178,22 @@ function renderMessages (messages = []) {
 document.addEventListener('DOMContentLoaded', () => {
   const messagesUL = qS('ul#messages');
   const newMessageForm = qS('form#new-message');
+  const filterButton = qS('button#filter');
+  const searchBar = qS('input#search');
 
+  window.searchTerm = '';
+  searchBar.addEventListener('keyup', event => {
+    searchTerm = event.target.value;
+    refreshMessages();
+  });
+
+
+  window.filter = false;
+  filterButton.addEventListener('click', event => {
+    filter = !filter
+    filterButton.classList.toggle('selected');
+    refreshMessages();
+  })
   function refreshMessages () {
     getMessages()
     .then(messages => {
@@ -179,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = event.currentTarget;
     const fData = new FormData(form);
 
-  createMessage({content: fData.get('content')})
+  createMessage({content: fData.get('content'), username: fData.get('username')})
     // update all the time
     .then(refreshMessages)
     // clear the field after posting
@@ -216,53 +261,60 @@ document.addEventListener('DOMContentLoaded', () => {
         destroyMessage(messageId)
           .then(refreshMessages);
       }
+      if (target.matches('.flag-button')) {
+        event.preventDefault();
+        const messageId = target.getAttribute('data-id');
+        const flagged = "true" === target.getAttribute('data-flagged');
+        flagMessage(messageId, !flagged)
+          .then(refreshMessages);
+      }
     })
   });
 
 
   // CHAT-BATTLE EXERCISES!!!
 
-  function createMessage (text) {
-    return fetch(
-     '/messages/',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({body: text})
-      }
-    );
-  }
-
-  function replaceMessage (id, text) {
-    return fetch(
-      `/messages/${id}`,
-      {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({body: text})
-      }
-    )
-  }
-
-  function deleteMessage (id) {
-    return fetch(
-      `/messages/${id}`,
-      {
-        method: 'DELETE',
-      }
-    )
-  }
-
-  function copyMessage (id) {
-    return fetch(
-      `/messages`,
-    )
-      .then(res => res.json())
-      .then(messages => {
-        const message = messages.find(m => m.id === id);
-        return createMessage(message.body);
-       })
-  }
+  // function createMessage (text) {
+  //   return fetch(
+  //    '/messages/',
+  //     {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json'},
+  //       body: JSON.stringify({body: text})
+  //     }
+  //   );
+  // }
+  //
+  // function replaceMessage (id, text) {
+  //   return fetch(
+  //     `/messages/${id}`,
+  //     {
+  //       method: 'PATCH',
+  //       headers: { 'Content-Type': 'application/json'},
+  //       body: JSON.stringify({body: text})
+  //     }
+  //   )
+  // }
+  //
+  // function deleteMessage (id) {
+  //   return fetch(
+  //     `/messages/${id}`,
+  //     {
+  //       method: 'DELETE',
+  //     }
+  //   )
+  // }
+  //
+  // function copyMessage (id) {
+  //   return fetch(
+  //     `/messages`,
+  //   )
+  //     .then(res => res.json())
+  //     .then(messages => {
+  //       const message = messages.find(m => m.id === id);
+  //       return createMessage(message.body);
+  //      })
+  // }
 
   /*
   createMessage(`
