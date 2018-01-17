@@ -1,0 +1,81 @@
+
+1) git clone git@github.com:CodeCoreYVR/chatr-express.git
+2) set username and password in config.js in confi folder
+3) npm i
+4) npm r db:setup
+5) npm run start
+6) added code to main.js to show how fetch works
+7)
+
+
+
+fetch('/messages')
+
+fetch('http://localhost:3434/messages')
+ .then(res => console.log(res))
+
+
+ fetch('http://localhost:3434/messages')
+  .then(res => console.log(Array.from(res.headers.entries())))
+
+
+fetching datas from db:
+
+fetch('http://localhost:3434/messages')
+	.then(response => response.text())
+	.then(console.log)
+
+fetch('http://localhost:3434/messages')
+	.then(response => response.json())
+	.then(console.log)
+
+
+fetch('http://localhost:3434/messages')
+	.then(response => response.json())
+	.then(console.table)
+
+  JSON.stringify({a: 1, b: [0,1,2]})
+  "{"a":1,"b":[0,1,2]}"
+
+  JSON.parse("{\"a\":1,\"b\":[0,1,2]}")
+  {a: 1, b: Array(3)}
+
+
+createMessage({content: 'Hello world'})
+
+fetch(
+'/messages/7',
+    {method: 'DELETE'})
+
+destroyMessage(6)
+
+Inspect/Source/Pause
+
+How to take the id's:
+<a data-id="${message.id}" class="delete-button" href>Delete</a>
+(original line:
+<a class="delete-button" href>Delete</a>
+)
+
+http://chat-battle.herokuapp.com/
+function createMessage (message) {
+  return fetch('/messages',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(message)
+    }
+  );
+}
+
+createMessage({body: 'owww baddddd!!!!'})
+
+
+
+
+
+
+
+  \\BUMP

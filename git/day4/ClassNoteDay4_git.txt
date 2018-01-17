@@ -19,7 +19,7 @@ cat ~/.bash_history  --->  show history
 history  ----> show what commands were used
 
 *** creating a Branch
-git checkout -b nameOfIt  ---> create similar the mastar branch
+git checkout -b nameOfIt  ---> create similar the master branch
 git branch -v
 
 
@@ -31,6 +31,10 @@ git merge  ----> it will merge what was done in branchs  (push it's needed after
 git checkout a (you will switch to branch a)
 git merge b (this will merge all changes from branch b into branch a)
 git commit -a (this will commit your changes)
+
+git checkout -b homework-8_Linking
+git checkout  homework-6
+git merge homework-8_Linking
 
 (ESC ;wq)
 
