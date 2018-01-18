@@ -1,0 +1,51 @@
+package.json has settings for the project like the name
+README.md is a great guide for using React
+index.html is in public folder and we rarely work on it
+index.js is in the src folder with some imports lines
+
+
+
+1) apm install language-javascript-jsx
+2) apm install language-babel
+   can be done inside atom (settings/install)
+3) npm install -g create-react-app
+4) sudo npm install -g create-react-app
+5) create-react-app awesome-answers-react
+6) go to the directory created (in this case: awesome-answers-react)
+7) npm start
+8) deleted some files on src folder
+9) index.js changed
+   deleted line with app
+   changed in ReactDOM from app to div
+10)
+11)
+12)
+13)
+14)
+
+
+
+
+
+
+
+Success! Created awesome-answers-react at /home/wellington/CodeCore/Nov-2017-Cohort/React/awesome-answers-react
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd awesome-answers-react
+  npm start
