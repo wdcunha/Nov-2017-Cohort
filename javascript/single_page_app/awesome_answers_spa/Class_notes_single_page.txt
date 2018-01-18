@@ -1,0 +1,27 @@
+
+1) created js, css and index as primary structure
+   code for html and js
+2) gemfile from awesome answer
+    gem 'rack-cors'
+    bundle
+3) added lines in application.rb
+4) rails s
+5) API_KEY in rails c
+    1: u = User.first
+    2: u.api_key
+6) added const to hold api_key on index.js
+   changed line inside method to receive the const value of url
+   added Authorization line on index.js and used the API_KEY const
+   lines for nest content and creat div inside div for example
+   lines to get content from awesome answer
+7) set up css file to give a better appearence
+8) 
+
+
+H('div', null, H('div', null, H('div', null, 'stuffs'),'things'))
+<div>
+  <div>
+    ​<div>​stuffs​</div>​
+    "things"
+  </div>
+​</div>​
