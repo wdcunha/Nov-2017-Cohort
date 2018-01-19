@@ -5,23 +5,68 @@ index.js is in the src folder with some imports lines
 
 
 
-1) apm install language-javascript-jsx
-2) apm install language-babel
-   can be done inside atom (settings/install)
-3) npm install -g create-react-app
-4) sudo npm install -g create-react-app
-5) create-react-app awesome-answers-react
+1) apm install language-javascript-jsx          (globally)
+2) apm install language-babel                   (globally)
+   can be done inside atom (settings/install)   (globally)
+3) npm install -g create-react-app              (globally)
+4) sudo npm install -g create-react-app         (globally)
+5) create-react-app awesome-answers-react \  create-react-app amazon-app-react
 6) go to the directory created (in this case: awesome-answers-react)
 7) npm start
 8) deleted some files on src folder
 9) index.js changed
    deleted line with app
    changed in ReactDOM from app to div
-10)
-11)
-12)
-13)
-14)
+10) created code to show some content in the index page from awesome (question)
+    method QuestionDetails()
+    it need to be inside a tag div
+11) we can define in package.json a port for the server
+    "start": "PORT=4545react-scripts start",
+12) created a method to show what had done
+    QuestionShowPage()
+13) created App method to enclose all of previous code
+    without creating elements in html file
+14) added props to make it dinamically
+    set up author equal empty object in case null
+15) QuestionShowPage addded
+    when passing string, put inside {}
+    when passing object, {{}}
+16) added Field to treat fields to generalize (reuse)
+17) like in rails, it has  modules using import to use it
+    *limited browser support (maybe chrome and firefox)
+    *not use directly in node, but inside module
+    *
+18) created a directory to isolate the components
+    added file App.js and all components need to have the same name
+    import react in the first line
+
+19) created file QuestionShowPage.js and all content put there
+20) created file QuestionDetails.js
+21) created file AnswerDetails.js
+22) created Field.js
+23) inseted line in index js
+    import App from .... (app will call every other methods)
+    import in all files where has dependence
+24) adding some style
+    starting in QuestionShowPage
+    added style inside in double {}
+25) added in QuestionDetails a const for style
+26) added set for AnswerDetails in css
+27) created a directory data
+    *it received data for now until reach a DB
+28) created some files
+    QuestionIndexPage.js
+    added import for data
+29) added import inside app.js
+30) added div and calling for QuestionIndexPage inside app.js
+31) inserted AnswerList.js component file
+32) added code in QuestionShowPage to provide code from AnswerList
+33)
+34)
+
+
+
+
 
 
 
