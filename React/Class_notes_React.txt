@@ -16,7 +16,7 @@ index.js is in the src folder with some imports lines
 8) deleted some files on src folder
 9) index.js changed
    deleted line with app
-   changed in ReactDOM from app to div
+   added components for the folder where is app.js
 10) created code to show some content in the index page from awesome (question)
     method QuestionDetails()
     it need to be inside a tag div
