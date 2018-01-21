@@ -1,0 +1,27 @@
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  padding: 15px;
+  background-color: lightgrey;
+}
+
+.hidden {
+  display: none;
+}
+.page {
+  margin: 15px;
+}
+
+#ProductIndex > * {
+  margin-bottom: 10px;
+}

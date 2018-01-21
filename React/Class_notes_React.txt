@@ -66,14 +66,6 @@ index.js is in the src folder with some imports lines
 
 
 
-
-
-
-
-
-
-
-
 Success! Created awesome-answers-react at /home/wellington/CodeCore/Nov-2017-Cohort/React/awesome-answers-react
 Inside that directory, you can run several commands:
 
@@ -94,3 +86,62 @@ We suggest that you begin by typing:
 
   cd awesome-answers-react
   npm start
+
+
+
+>>>>>>>>>>  refactoring components
+
+1) changed line import react putting component
+2) changed functions to class extends Component
+   included render - needs to wrap all the code from former function
+3) added constructor for classes
+   added super to call tools from Component that is parent
+   added inside const state:  this.state.question
+   done the same for QuestionIndexPage
+4) react developer tools chrome (intalled on chrome)
+   it gives a react tab inside inpector (F12) where is possible to make changes opening items from state on there
+5) link below is reference for code of many reacts events
+    https://reactjs.org/docs/events.html
+6) added in QuestionIndexPage code to delete questions index
+   onClick event
+   created method deleteQuestion
+   setState added inseted of using pop method that causes buch issues (this will just take delete action in front end side)
+   when we assign a method for a variable, it's gone, so need to add line to assign it for a variable with bind (inside state)
+   to take the id, used event as argument in the method deleteQuestion
+   added data-id to take it for deleting the line
+   filter returns a copy of the array
+   currentTarget is a string, so need to be parsed
+7) added delete for question in QuestionShowPage
+8) added delete for answer in QuestionShowPage
+   button goes in AnswerDetails
+   the trick is how to do the component communicate in the middle of the others
+   a) put button in AnswerDetails
+   b) used props.onDeleteClick
+      the value we will pass into delete button is a function
+   c) added a const to support line above
+   d) in AnswerList call onDeleteClick bellow AnswerDetails call
+   e) added const to support line above
+   f) added onAnswerDeleteClick inside tag AnswerList in the QuestionShowPage
+   g) added method deleteAnswer
+   h) added line with bindin inside constructor to load it
+      bind is used because it returns a callback
+   i)
+
+9) created QuestionForm.js in components folder
+   added code to show a form
+10) added line to import QuestionForm in QuestionIndexPage
+11) added code in QuestionIndexPage below question title
+    <QuestionForm
+    onSubmit={() => {console.log('Test!')}}
+    />
+12) added addQuestion in QuestionIndexPage as callback
+    inserted line call inside constructor
+    everything done until here is saved in the state
+13) 
+
+
+
+
+
+
+\\bump

@@ -3,9 +3,6 @@ const BASE_URL = 'http://localhost:3000';
 
 // HTTP REQUESTS
 
-
-// HTTP REQUESTS
-
 const Question = {
   all () {
     return fetch(

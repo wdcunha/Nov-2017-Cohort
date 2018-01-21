@@ -2,7 +2,8 @@ import React from 'react';
 import {AnswerDetails} from './AnswerDetails';
 
 function AnswerList (props) {
-  const {answers = []} = props;
+  // const {answers = []} = props;
+  const {answers = [], onAnswerDeleteClick = () => {}} = props;
 
   return (
     <ul className="AnswerList">
@@ -19,7 +20,10 @@ function AnswerList (props) {
               Takes all properties of an object an applies
               as props of an element.
             */}
-              <AnswerDetails {...answer} />
+            <AnswerDetails
+              {...answer}
+              onDeleteClick={onAnswerDeleteClick}
+            />
             </li>
           ))
         }
