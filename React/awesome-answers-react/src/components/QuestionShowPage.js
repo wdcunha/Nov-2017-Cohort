@@ -3,9 +3,9 @@ import React, {Component} from 'react';// When you're not export a default from 
 // you must braces after `import` to choose the values
 // that you are import from the module.
 import {QuestionDetails} from './QuestionDetails';
-import {AnswerDetails} from './AnswerDetails';
 import {AnswerList} from './AnswerList';
-import question from '../data/question';
+// import question from '../data/question';
+import {Question} from '../requests/questions';
 
 class QuestionShowPage extends Component {
   // When you create your own constructor, you overwrite
@@ -20,7 +20,8 @@ class QuestionShowPage extends Component {
     super(props)
 
     this.state = {
-      question: question
+      // question: question
+      question: {}
     };
 
     this.delete = this.delete.bind(this);
@@ -45,22 +46,48 @@ class QuestionShowPage extends Component {
     })
   }
 
-  render () {
-    const {answers = []} = this.state.question;
 
-    if (Object.keys(this.state.question).length < 1) {
-      return (
-        <main
-          className="QuestionShowPage"
-          style={{
-            padding: '0 20px'
-          }}
-        >
-          <h2>Question does't exist!</h2>
-        </main>
-      );
+    componentDidMount () {
+      const {params} = this.props.match;
+
+      Question
+        .get(params.id)
+        .then(question => {
+          this.setState({question, loading: false})
+        });
     }
 
+    render () {
+      const {loading} = this.state;
+      const {answers = []} = this.state.question;
+
+      if (loading) {
+        return (
+          <main
+            className="QuestionShowPage"
+            style={{
+              padding: '0 20px'
+            }}
+          >
+            <h3>Loading question...</h3>
+          </main>
+        )
+      }
+
+          /*
+          if (Object.keys(this.state.question).length < 1) {
+            return (
+              <main
+                className="QuestionShowPage"
+                style={{
+                  padding: '0 20px'
+                }}
+              >
+                <h2>Question doesn't exist!</h2>
+              </main>
+            );
+          }
+          */
     // To pass props to React elements, set them with
     // "HTML attributes". Each attribute will as a property
     // of the `props` object.
@@ -74,27 +101,13 @@ class QuestionShowPage extends Component {
         style={{
           padding: '0 20px'
         }}
-        >
+      >
+        {/* I'm a valid comment */}
         <QuestionDetails {...this.state.question} />
-        {/*<QuestionDetails
-          title="What is your favourite colour?"
-          body="Red, magenta, blue, indigo, purple, etc."
-          created_at="2017-01-01"
-          updated_at="2017-01-01"
-          view_count={901}
-          author={{full_name: "Jon Snow"}}
-        />*/}
         <button
           onClick={this.delete}
         >Delete</button>
-
-        <h1>Answers</h1>
-        {/*<AnswerDetails
-        title="What is your favourite colour?"
-        body="What kind of idiot picks a password no one can guess?"
-        author={{full_name: "Moses Bogishich"}}
-        created_at="1 day ago"
-        />*/}
+        <h3>Answer</h3>
         <AnswerList
           answers={answers}
           onAnswerDeleteClick={this.deleteAnswer}

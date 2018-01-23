@@ -127,17 +127,77 @@ We suggest that you begin by typing:
       bind is used because it returns a callback
    i)
 
-9) created QuestionForm.js in components folder
+
+
+
+>>>>>>>>>>
+
+1) created QuestionForm.js in components folder
    added code to show a form
-10) added line to import QuestionForm in QuestionIndexPage
-11) added code in QuestionIndexPage below question title
-    <QuestionForm
-    onSubmit={() => {console.log('Test!')}}
-    />
-12) added addQuestion in QuestionIndexPage as callback
-    inserted line call inside constructor
-    everything done until here is saved in the state
-13) 
+2) added line to import QuestionForm in QuestionIndexPage
+3) added code in QuestionIndexPage below question title
+  <QuestionForm
+  onSubmit={() => {console.log('Test!')}}
+  />
+4) added addQuestion in QuestionIndexPage as callback
+  inserted line call inside constructor
+  everything done until here is saved in the state
+5) QuestionForm edited
+   react treat the same line for differents models of browsers
+6) QuestionIndexPage added newQuestion: {} inside constructor
+   - added attribute for QuestionForm tag above title Question:           onSubmit={this.addQuestion}
+
+..... (update)
+7) added method updateNewQuestion
+   line of handleChange edited of QuestionForm
+8) divs  QuestionForm
+9) added question variable inside const on QuestionForm method
+10) QuestionIndexPage added line on QuestionForm: question newQuestion
+11) const added for render
+12) inizializing fi elds on this.state
+13) addQuestion edited
+    added line for updateNewQuestion in constructor
+14) added new file currentdatetime
+    added componentDidMount to keep updating the date
+    added componentWillUnmount to remove
+15) app.js added line for currentdatetime
+16) copied api_key and const from awesome_answer_spa
+    created folder requests
+    pasted in
+........
+
+1) put {} for question in QuestionShowPage
+    deleted line that import data from file
+    added loading
+2) installed npm install react-router-dom
+    it's for calendar
+3) set navigation bar
+    app.js added line for import router
+    changed lines for calling QuestionIndexPage and QuestionShowPage
+4) added new file NavBar.js
+
+5) edited CurrentDateTime
+19) added line with const params in QuestionShowPage inside componentDidMount
+20) added link_to inside <li> in QuestionIndexPage
+21) added import link in QuestionIndexPage
+
+
+
+>>>>  new form
+
+1) duplicate QuestionIndexPage for QuestionNewPage
+   edited to leave just what needed to the form
+2) edited app.js
+   added line for route newQuestion
+   took out all loading statement
+3) added link to in NavBar
+4) amended in QuestionForm input for textarea
+5) cleaned a bunch of lines about update and addQuestion
+   lines with Link and Field
+   QuestionForm line
+6) removed Link from app.js import line
+7)
+
 
 
 

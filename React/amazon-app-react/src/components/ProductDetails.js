@@ -11,8 +11,8 @@ function ProductDetails (props = {}) {
       <h2> {props.title} </h2>
       <div style={containerStyle} >
         <p>{props.description}</p>
-        <p>{props.price}</p>
-        <p>Seller: {props.full_name}</p>
+        <p>Price: {props.price}</p>
+        <p>Seller: <strong>{props.author.full_name}</strong></p>
         <Field name="Created At" value={props.created_at} />
       </div>
     </div>

@@ -1,17 +1,36 @@
 import React from 'react';
-import {QuestionShowPage} from './QuestionShowPage';
-import {QuestionIndexPage} from './QuestionIndexPage';
-
 // Anywhere you write JSX tags, React must be
 // imported, because JSX tags are translated
 // to React.createElement(...) calls.
+import {QuestionShowPage} from './QuestionShowPage';
+import {QuestionIndexPage} from './QuestionIndexPage';
+import {QuestionNewPage} from './QuestionNewPage';
+import {NavBar} from './NavBar';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 
 function App () {
   return (
-    <div className="App">
-      <QuestionIndexPage />
-      <QuestionShowPage />
-    </div>
+    <Router>
+      <div className="App">
+        {/* <nav>
+          <CurrentDateTime />
+          <Link to="/">Home</Link>
+          <Link to="/questions">Questions</Link>
+        </nav> */}
+        {/* <QuestionIndexPage />
+          <QuestionShowPage /> */}
+          <NavBar />
+          <Switch>
+            <Route path="/questions" exact component={QuestionIndexPage} />
+            <Route path="/questions/new" component={QuestionNewPage} />
+            <Route path="/questions/:id" component={QuestionShowPage} />
+          </Switch>
+      </div>
+    </Router>
   )
 }
 

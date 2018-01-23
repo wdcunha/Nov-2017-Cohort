@@ -1,14 +1,17 @@
 import React, {Component} from 'react';// When you're not export a default from a module
-import {QuestionForm} from './QuestionForm';
 import {Field} from './Field';
-import questions from '../data/questions';
+// import questions from '../data/questions';
+import {Question} from '../requests/questions';
+import {Link} from 'react-router-dom';
 
 class QuestionIndexPage extends Component {
+
   constructor (props) {
     super(props)
 
     this.state = {
-      questions: questions
+      loading: true,
+      questions: []
     };
 
     // this.deleteQuestion = (..args) => this.deleteQuestion(...args);
@@ -17,7 +20,6 @@ class QuestionIndexPage extends Component {
     // we must bind this to it otherwise we won't have access
     // to any method on `this` such `setState`.
     this.deleteQuestion = this.deleteQuestion.bind(this);
-    this.addQuestion = this.addQuestion.bind(this);
   }
 
   deleteQuestion (questionId) {
@@ -50,20 +52,40 @@ class QuestionIndexPage extends Component {
     }
   }
 
+    /* // Promise version
+    componentDidMount () {
+      Question
+        .all()
+        .then(questions => {
+          // this.setState({questions: questions})
+          // When you add a property of the same as variable,
+          // you can use this shortcut ð syntax sugar for ð
+          this.setState({questions, loading: false})
+        });
+    }
+    */
 
-  addQuestion (newQuestion) {
-    const {questions} = this.state;
-    // ð hack because we don't have a author
-    newQuestion.author = {};
-    this.setState({
-      questions: [
-        newQuestion,
-        ...questions
-      ]
-    })
-  }
+    // async-await version
+    async componentDidMount () {
+      const questions = await Question.all();
+      this.setState({questions, loading: false});
+    }
+
 
   render () {
+    const {loading} = this.state;
+
+    if (loading) {
+      return (
+        <main
+          className="QuestionIndexPage"
+          style={{padding: '0  20px'}}
+        >
+          <h3>Loading questions...</h3>
+        </main>
+      )
+    }
+
     return (
       <main
         className="QuestionIndexPage"
@@ -72,19 +94,16 @@ class QuestionIndexPage extends Component {
         }}
       >
         <h2>Questions</h2>
-        <QuestionForm
-          onSubmit={this.addQuestion}
-        />
-        <ul
-          style={{paddingLeft: '30px'}}
-        >
+        <ul style={{paddingLeft: '30px'}}>
           {
             this.state.questions.map(question => (
-              <li
-                key={question.id}
+              <li key={question.id}
                 style={{padding: '30px'}}
               >
-                <a href="">{question.title}</a>
+                {/* <a href="">{question.title}</a> */}
+                <Link to={`/questions/${question.id}`}>
+                  {question.title}
+                </Link>
                 <Field name="Author" value={question.author.full_name} />
                 <button
                 onClick={this.deleteQuestion(question.id)}
