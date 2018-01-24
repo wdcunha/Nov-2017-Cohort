@@ -5,14 +5,16 @@ import React, {Component} from 'react';
 // that you are import from the module.
 import {ProductDetails} from './ProductDetails';
 import {ReviewList} from './ReviewList';
-import product from '../data/product';
+// import product from '../data/product';
+import {Product} from '../requests/products';
 
 class ProductShowPage extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      product: product
+      loading: true,
+      product: {}
     };
     this.delete = this.delete.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
@@ -36,9 +38,32 @@ class ProductShowPage extends Component {
     })
   }
 
+
+    componentDidMount () {
+      const {params} = this.props.match;
+      Product
+       .get(params.id)
+       .then(product => {
+         this.setState({product, loading: false})
+       });
+     }
   render  () {
     // const {reviews = []} = product;
+    const {product, loading} = this.state;
     const {reviews = []} = this.state.product;
+
+    if (loading) {
+      return (
+        <main
+          className="ProductShowPage"
+          style={{
+            padding: '0 20px'
+          }}
+        >
+          <h3>Loading product...</h3>
+        </main>
+      )
+    }
 
     if (Object.keys(this.state.product).length < 1) {
       return (
@@ -52,7 +77,7 @@ class ProductShowPage extends Component {
         </main>
       );
     }
-    
+
     return (
       <main
         className="ProductShowPage"
@@ -60,7 +85,8 @@ class ProductShowPage extends Component {
           padding: '0 20px'
         }}
         >
-        <ProductDetails {...this.state.product} />
+        {/* <ProductDetails {...this.state.product} /> */}
+        <ProductDetails {...product} />
 
         {/*
           <ProductDetails

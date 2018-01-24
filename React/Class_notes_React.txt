@@ -161,19 +161,18 @@ We suggest that you begin by typing:
     added componentDidMount to keep updating the date
     added componentWillUnmount to remove
 15) app.js added line for currentdatetime
-16) copied api_key and const from awesome_answer_spa
-    created folder requests
-    pasted in
-........
 
+........
+0) copied api_key and const from awesome_answer_spa
+   created folder requests
+   pasted in
 1) put {} for question in QuestionShowPage
     deleted line that import data from file
     added loading
 2) installed npm install react-router-dom
-    it's for calendar
 3) set navigation bar
-    app.js added line for import router
-    changed lines for calling QuestionIndexPage and QuestionShowPage
+   app.js added line for import router
+   changed lines for calling QuestionIndexPage and QuestionShowPage
 4) added new file NavBar.js
 
 5) edited CurrentDateTime
