@@ -21,6 +21,7 @@ function QuestionForm (props) {
 
   // const handleChange = event => {
   const handleChange = name => event => {
+    // question[name] = event.currentTarget.value;
     onChange({[name]: event.currentTarget.value});
   };
 

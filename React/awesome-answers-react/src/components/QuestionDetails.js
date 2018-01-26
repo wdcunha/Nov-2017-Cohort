@@ -29,7 +29,18 @@ function QuestionDetails (props = {}) {
     </div>
   );
 }
-
+//
+// console.log(QuestionDetails({
+//   title: "What is this?",
+//   body: "djalsdkaskdaljsdkas",
+//   author: {
+//     full_name: "djaslkdjklasjkldjlaks"
+//   }
+// }));
 
 
 export {QuestionDetails};
+
+
+
+//

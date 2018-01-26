@@ -58,7 +58,7 @@ class QuestionShowPage extends Component {
     }
 
     render () {
-      const {loading} = this.state;
+      const {question, loading} = this.state;
       const {answers = []} = this.state.question;
 
       if (loading) {
@@ -103,7 +103,7 @@ class QuestionShowPage extends Component {
         }}
       >
         {/* I'm a valid comment */}
-        <QuestionDetails {...this.state.question} />
+        <QuestionDetails {...question} />
         <button
           onClick={this.delete}
         >Delete</button>
