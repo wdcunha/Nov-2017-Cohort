@@ -2,10 +2,10 @@ import React, {Component} from 'react';// When you're not export a default from 
 // (e.g. export {QuestionDetails, AnswerDetails}),
 // you must braces after `import` to choose the values
 // that you are import from the module.
-import {QuestionDetails} from './QuestionDetails';
-import {AnswerList} from './AnswerList';
+import {QuestionDetails} from '../QuestionDetails';
+import {AnswerList} from '../AnswerList';
 // import question from '../data/question';
-import {Question} from '../requests/questions';
+import {Question} from '../../requests/questions';
 
 class QuestionShowPage extends Component {
   // When you create your own constructor, you overwrite

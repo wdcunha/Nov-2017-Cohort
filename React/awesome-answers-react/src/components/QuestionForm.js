@@ -4,7 +4,8 @@ function QuestionForm (props) {
   const {
     question = {},
     onSubmit = () => {},
-    onChange = () => {}
+    onChange = () => {},
+    errors = []
   } = props;
 
   const handleSubmit = event => {
@@ -24,6 +25,16 @@ function QuestionForm (props) {
     // question[name] = event.currentTarget.value;
     onChange({[name]: event.currentTarget.value});
   };
+
+  const renderError = () => errors.length > 0 ? (
+    <ul>{
+      errors
+        .filter(e => e.field === 'title')
+        .map(e => <li>{e.message}</li>)
+    }</ul>
+  ) : (
+    null
+  );
 
   return (
     // <form
@@ -47,6 +58,7 @@ function QuestionForm (props) {
           id="title"
         />
       </div>
+      { renderError() }
 
       <div>
         <label htmlFor="body">Body</label> <br />

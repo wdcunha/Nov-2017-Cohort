@@ -24,7 +24,7 @@ export const Question = {
         }
       }
     )
-      .then(res => res.json())
+    .then(res => res.json())
   },
   get (id) {
     return fetch(

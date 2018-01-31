@@ -1,8 +1,8 @@
-import React, {Component} from 'react';// When you're not export a default from a module
-import {Field} from './Field';
-// import questions from '../data/questions';
-import {Question} from '../requests/questions';
 import {Link} from 'react-router-dom';
+import React, {Component} from 'react';// When you're not export a default from a module
+import {Field} from '../Field';
+// import questions from '../data/questions';
+import {Question} from '../../requests/questions';
 
 class QuestionIndexPage extends Component {
 
