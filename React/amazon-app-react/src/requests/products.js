@@ -1,5 +1,11 @@
-const API_KEY = '8decfc9788d811245e78ff02f8df28e2cffabeb060a2ad8ab1ab55da57138892';
-const BASE_URL = 'http://localhost:3000';
+/* global fetch */
+import {BASE_URL} from './config';
+
+// const API_KEY = '8decfc9788d811245e78ff02f8df28e2cffabeb060a2ad8ab1ab55da57138892';
+
+function getJwt () {
+  return `JWT ${localStorage.getItem('jwt')}`;
+}
 
 // HTTP REQUESTS
 
@@ -13,7 +19,8 @@ export const Product = {
       `${BASE_URL}/api/v1/products`,
       {
         headers: {
-          'Authorization': API_KEY
+          // 'Authorization': API_KEY
+          'Authorization': getJwt()
         }
       }
     )
@@ -24,7 +31,8 @@ export const Product = {
       `${BASE_URL}/api/v1/products/${id}`,
       {
         headers: {
-          'Authorization': API_KEY
+          // 'Authorization': API_KEY
+          'Authorization': getJwt()
         }
       }
     )
@@ -39,7 +47,8 @@ export const Product = {
       {
         method: 'POST',
         headers: {
-          'Authorization': API_KEY,
+          // 'Authorization': API_KEY,
+          'Authorization': getJwt(),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(params)
