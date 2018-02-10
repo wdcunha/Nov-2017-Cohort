@@ -1,0 +1,83 @@
+# Stating a project
+
+1. Generate app. add .gitignore and commit "Create project"
+2. Push it to Github
+3. Add all team members as a collaboreator
+4. Create a "integration" from master and push it up
+5. Set "integration" branch as the default
+6. Every team member clones the project
+7. (optinal) Protect the master branch from destructive operations
+
+# Branches
+
+- "master" branch is only for releases. Code that is 100% reader for the public.
+- "integration" branch which will be the branch share work between team members.
+- feature branches (to be named after feature name) will be created by developer to implement the features they're tasked to do. No dev should directly work on "integration". Features should always be created from the latest commit on "integration".
+
+
+# Starting a feature
+
+1. git fetch (get latest data from your remotes such as Github).
+2. git checkout -b <feature_name> origin/integration (creates and switches new branch named < feature_name> from the latest version of "integration" from your "origin" remote).
+3. do some work, do a bunch of commits until your feature is finished.
+4. git push -u origin <feature_name>
+5. go to Github and do a pull request fo your branch to "integration".
+6. (If merge conflict shown, do:
+    a. git checkout <feature_name>
+    b. git fetch
+    c. git merge origin/integration
+    d. solve conflicts
+    e. git push origin <feature_name>
+    f. go back to PR url
+)
+7. Send PR url to a team member for review.
+8. Team member approves.
+9. Click "Squash and Merge" button.
+10. (optional) to delete branch locally:
+    git branch -D <feature_name>
+
+
+Settings/Branches:
+
+- Default Branch: select integration
+- Branch Protection: Protect this branch
+
+
+
+google api allows searching
+meetup api
+hootsuite (sth as stretch I couldn't understand)
+admin is a stretch
+
+
+
+https://codecore.certified.in/codecore-bootcamp-september-2017-cohort-copy/sdlc-git-rebasing/sdlc-presentation-3
+
+https://balsamiq.com/
+
+
+SDLC ===> Software Development Lifecycle
+
+Agile:
+Use relative points
+http://agilemanifesto.org/
+
+https://www.pivotaltracker.com/
+
+
+
+moqups ===>
+
+balsamiq ===> draw many things, screens for example, using more improved options
+
+Sketch: the same, but more close to hands free.
+https://www.sketchapp.com/
+
+ERD:
+
+https://www.draw.io/
+
+Estimating
+Gantt Charts
+break down in smaller piece as much as possible to estimate better
+https://www.teamgantt.com/

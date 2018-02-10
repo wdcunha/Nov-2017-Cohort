@@ -2,24 +2,10 @@ import React, {Component} from 'react';
 // Anywhere you write JSX tags, React must be
 // imported, because JSX tags are translated
 // to React.createElement(...) calls.
-// import {QuestionShowPage} from './QuestionShowPage';
-// import {QuestionIndexPage} from './QuestionIndexPage';
-// import {QuestionNewPage} from './QuestionNewPage';
-// import {SignInPage} from './SignInPage';
-// import {NotFoundPage} from './NotFoundPage';
-// When importing a directory, the import will actually
-// look for a file named `index.js` inside of it and
-// import that instead.
-// import {NotFoundPage} from './pages';
-// import {HomePage} from './HomePage';
-import {
-  QuestionShowPage,
-  QuestionIndexPage,
-  QuestionNewPage,
-  SignInPage,
-  HomePage,
-  NotFoundPage
-} from './pages';
+import {QuestionShowPage} from './QuestionShowPage';
+import {QuestionIndexPage} from './QuestionIndexPage';
+import {QuestionNewPage} from './QuestionNewPage';
+import {SignInPage} from './SignInPage';
 import {NavBar} from './NavBar';
 import {AuthRoute} from './AuthRoute';
 import {
@@ -38,26 +24,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: null,
-      loading: true
+      user: null
     };
     this.signIn = this.signIn.bind(this);
-    this.signOut = this.signOut.bind(this);
-  }
-
-  signOut () {
-    localStorage.removeItem('jwt');
-    this.setState({user: null});
   }
 
   signIn () {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       const payload = jwtDecode(jwt);
-      // this.setState({user: payload});
-      this.setState({user: payload, loading: false});
-    } else {
-      this.setState({loading: false});
+      this.setState({user: payload});
     }
   }
 
@@ -70,17 +46,7 @@ class App extends Component {
   }
 
   render () {
-    // const {user} = this.state;
-    const {user, loading} = this.state;
-
-    if (loading) {
-      return (
-        <div>
-          Loading...
-        </div>
-      );
-    }
-
+    const {user} = this.state;
     // window.Token = Token;
     // The <Switch> component is used with <Route> children.
     // It will force only one route children to render at a time.
@@ -95,12 +61,8 @@ class App extends Component {
           </nav> */}
           {/* <QuestionIndexPage />
             <QuestionShowPage /> */}
-            <NavBar
-              user={user}
-              onSignOutClick={this.signOut}
-            />
+            <NavBar user={user} />
             <Switch>
-              <Route exact path="/" component={HomePage} />
               <Route path="/sign_in" render={props => {
                 return <SignInPage {...props} onSignIn={this.signIn} />
               }} />
@@ -117,19 +79,11 @@ class App extends Component {
                 path="/questions/new"
                 component={QuestionNewPage}
               />
-              <AuthRoute
+              <Route
                 isAuthenticated={this.isAuth()}
                 path="/questions/:id"
                 component={QuestionShowPage}
               />
-              {/* <Route render={props => <div>Not Found</div>}/> */}
-              {/*
-                To match all routes that aren't matched in
-                a Switch component, create a Route without
-                a `path` prop. We can use it to implement a 404
-                page.
-               */}
-              <Route component={NotFoundPage} />
             </Switch>
         </div>
       </Router>

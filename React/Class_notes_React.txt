@@ -169,7 +169,7 @@ We suggest that you begin by typing:
 1) put {} for question in QuestionShowPage
     deleted line that import data from file
     added loading
-2) installed npm install react-router-dom
+2) npm install react-router-dom
 3) set navigation bar
    app.js added line for import router
    changed lines for calling QuestionIndexPage and QuestionShowPage
@@ -195,8 +195,168 @@ We suggest that you begin by typing:
    lines with Link and Field
    QuestionForm line
 6) removed Link from app.js import line
-7)
 
+
+
+
+>>>>>>  JWT (Json Web Tokens)
+> Primaly used for authentication
+
+1) run this command in awesome folder:
+  rails g controller Api::V1::Tokens --no-assets --no-helper --skip-template-engine
+  need to inherit from Api::ApplicationController (in tokens_controller)
+  the same for products_controller (need to inherit from Api::)
+2) created line for tokens and question inside namespace v1 in routes (awesome)
+   gem 'jwt'
+   bundle
+3) postman and created tokens tab
+   used post and url: http://localhost:3000/api/v1/tokens
+   added in Headers Content-Type application/json
+   in body:
+   {
+    	"email": "js@winterfell.gov",
+    	"password": "supersecret"
+    }
+4) added code for authentication in TokensController
+   method create for authenticate and in fail
+   tested on postman
+   select JSON(application/json) insted of text (if it happens)
+5) added code for  private encode_token method
+   used code that has secret.yml as base
+   added line inside create method
+   tested on postman
+   took code and go to
+6) added code for revoke in 24hr
+   added line inside create in jwt
+7) added code in ApplicationController
+   before_action :authenticate_user! (moved to QuestionsController Api)
+   in private
+   current_user
+   tested in postman in Question Index
+   and put API_KEY (User.first.api_key) and the key taken from RAILS C
+   added JWT as second line of authentication on postman Question Index taken from Create Token tab
+   * one authorization select at a time
+
+   _______ react side _______
+8) created file tokens.js in resquest folder in awesome_answer_react
+   added const Token
+9) created file config.js
+   cut BASE_URL from question.js
+   added line instead: import {BASE_URL} from './config';
+   pasted in config.js
+10) added line in App.js
+    added import SignInPage
+    added line inside Switch for poiting to SignInPage
+    localStorage used to get jwt (can be seen in inspector/application)
+11) added file SignInPage.js for login
+    created a method to createToken
+12) added line in NavBar to show option for sign_in
+
+
+>>>>> High Order Component
+* a way to inherit a behavior from a component
+* AuthRote
+
+1) created new file in components:
+   AuthRoute.js
+2) added line to import AuthRote in App.js
+   added new line for route in QuestionNewPage line
+   changed from function to class
+   created constructor
+   created componentDidMount
+   created isAuth
+3) npm install jwt-decode
+4) added jwtDecode in app.js
+   added Component in the first line of import
+   refactored all route
+   added const user below render
+
+5) added in NavBar a line with user const
+
+6) question.js created function for getting jwt instead API_KEY
+   changed all calling for api_key
+
+
+
+
+>>>> signIn and signOut
+
+1) lines added to NavBar
+   - included onSignOutClick
+   - added code inside user ?
+2) lines added to app.js
+   - added loading to this.state and line to signout
+   - added method signout
+   - added line to signIn method to solve problem when refreshing the page
+   - added loading in const user inside render and if statement
+   - added signOut in NavBar tag after user in line 86
+
+
+
+
+
+>>>> errors methods messages
+
+1) change lines in routes in awesome answers inside namespace api
+   - used match to work with 'via' (allows get/post)
+2) Api ApplicationController in awesome answer
+   - added method not_found
+   - tested on postman
+      - QuestionShow amended jwt
+   - added line rescue_from
+   - added methods in protected section
+
+1) added nil .test in QuestionsController api
+2) ApplicationController api added rescue_from StandardError
+   - added method standard_error in protected
+3) changed code create inside QuestionsController api to simulate an error
+   - in the line question.save!, bang is necessary to not have crash
+
+1) added in ApplicationController api rescue_from record_invalid
+2) added method record_invalid in protected
+3) tested in postman in QuestionCreate
+   - first taken  jwt from QuestionShow to run it
+
+content above used after putting binding.pry inside record_invalid:
+error
+error.record.errors.map { |f| f }
+=> [:title]
+error.record.errors.map { |f, m| m }
+=> ["has already been taken"]
+
+
+>>>> json api (react side)
+http://jsonapi.org/
+* help to write code for json, saving time
+http://jsonapi-rb.org/
+
+1) in app.js, added a plain Route to simulate error
+2) added file NotFoundPage.js
+3) created file HomePage.js
+4) added line in app.js for import HomePage
+5) added line inside Switch for component HomePage
+
+>>>>
+
+1) in QuestionNewPage, changed .then line in createQuestion:
+   - put line for error validation in this.state
+   -
+2) added variable in render together newQuestion
+3) added attribute errors inside QuestionForm tag
+4) added errors in const from QuestionForm file
+5) included const for renderError before render
+6) added line for renderError in return after first div
+7) created component FormErrors.js
+
+
+>>> refactoring the way pages are organized
+
+1) created folder pages
+2) created file index.js
+3) moved every pages to folder pages
+4) in app.js, edited line import NotFoundPage
+   *enough point the folder, nor the file name
+5)
 
 
 

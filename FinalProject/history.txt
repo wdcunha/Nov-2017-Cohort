@@ -1,5 +1,95 @@
+(02-09-2018)
+
+- tried to learn how to use datepicker, but no success
+  - I needed to take stuffs from quiz3
+  - install every packages needed
+- tested report on react just for search by now
+- create tables for transac and category
+
+(02-08-2018)
+
+- fixed error about validation on the transac type pages
+- brett suggested to put files on vendor folder (need to see how it works)
+- implementing users
+- find the if that shows title according to the option select by the user (edit or new)
+- installed gems: fake, cowsay, cancancan
+
+
+(02-07-2018)
+
+- after doing late QuizIII, coming back to the final project
+- fixing problem with layout about link for new/index
+
+    <ol class="breadcrumb second">
+      <li class="breadcrumb-item">
+        <a href="/transaction_type/new">New</a>
+      </li>
+    </ol>
+
+
+(02-03-2018)
+
+- fixed link for new transation type
+- testing validation form
+  - I couldn't set up glyphicon, but validation is working
+- rails g model user first_name last_name email password_digest
+- rails g migration add_user_to_transaction_type user:references
+- rails g controller users --no-assets --no-helper
+- rails g migration remove_descrition_from_transactionType descrition:text
+
+(02-02-2018)
+
+- rails g model transactionType descrition:text
+      Running via Spring preloader in process 9328
+            invoke  active_record
+            create    db/migrate/20180202171054_create_transaction_types.rb
+            create    app/models/transaction_type.rb
+
+- rails g controller transactionType --no-helper --no-assets
+- searching and testing some pages templates
+- abbandoned erd gem
+- rails g controller welcome --no-assets --no-helper
+    Running via Spring preloader in process 30851
+          create  app/controllers/welcome_controller.rb
+          invoke  erb
+          create    app/views/welcome
+- added index page and set route for it as root
+- copied html form template (bootstrap 4 sb-admin) for index welcome
+
+(02-01-2018)
+
+- gem 'erd'
+- created routes for erd gem
+* nothing worked
+- rails g controller transation --no-helper --no-assets
+
+(01-24-2018) - Defining BD and some tables:
+
+
+* need to define user table
+  * check about competence table, if needed or if there's a better way to do it
+* change the names of fields and analise if all tables are correctly drawn
+
+* examples of how to generate migration files for DB. Necessary edited all:
+
+rails g migration add_view_count_to_questions  view_count:integer
+
+
+rails g migration add_view_count_to_questions  view_count:integer
+rails g migration add_last_name_to_users  last_name:string
+rails g migration add_user_to_campaigns user:references
+rails g migration add_user_to_questions user:references
+rails g migration add_user_to_reviews user:references
+rails g migration add_is_admin_to_user is_admin:boolean
+rails g migration add_api_key_to_user api_key:string
+rails g migration add_image_to_questions image
 
 (01-23-2018) - Project created:
+
+Talked to Luc about naming tables and field as well charts
+
+adjusted github repo and incremented gitignore
+
 rails new fmapp -T -d postgresql
 Using -T -d postgresql --skip-turbolinks from /home/wellington/.railsrc
       create
