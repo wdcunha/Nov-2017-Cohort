@@ -1,3 +1,65 @@
+(02-14-2018)
+
+- solved problem to run wicked_pdf (it was inside initializer file and controller)
+- installing datepicker (jquery)
+- calendar for linking daily entries
+
+(02-14-2018)
+
+- implemented charts
+  used Chart.js - (Gus helped a lot)
+- ##AFTER conect automatic the entity to the transaction when user sign in
+- implemented total calc for transac index
+- datepicker (search on youtube)
+- report (found 2 - one with Derek - wicked_pdf and another on youtube - prawn)
+- **Missing:
+    if user_signed_in in menu option;
+    menu user (clean it up);
+    clean up side bar (take out options not related to project);
+
+(02-13-2018)
+
+- link combobox for category, transaction, payee
+- show fks field
+- problem deleting category
+- error messages
+
+(02-12-2018)
+
+- problem when updating transacType
+- edit views
+- problem when seeding tables (solved)
+
+rails g migration DropPayeeCustomers
+rails g migration add_PayeeCustomer_to_Transactions
+
+AddUserToTransactionType
+
+(02-11-2018)
+
+- solved problem with logout button
+- solved problem with name of current_user when logged in
+- defined welcome page
+- create controllers and views for each model
+  rails g controller entities --no-helper --no-assets
+  rails g controller usings --no-helper --no-assets
+  rails g controller payee_customers --no-helper --no-assets
+  rails g controller payee_customer_types --no-helper --no-assets
+  rails g controller transac_categs --no-helper --no-assets
+
+
+(02-10-2018)
+
+- create models and tables:
+  rails g model transacCateg title description:text transaction_type:references
+  rails g model payeeCustomerType title description:text
+  rails g model payeeCustomer name address:text postaCode:text phone email payee_customer_type:references
+  rails g model entity name docNumber address:text postaCode:text phone email
+  rails g model transaction details:text date:date value:float transaction_type:references entity:references payee_customer:references transac_categ:references
+
+  rails g model using title description:text
+  rails g model using user:references entity:references
+
 (02-09-2018)
 
 - tried to learn how to use datepicker, but no success
@@ -5,6 +67,7 @@
   - install every packages needed
 - tested report on react just for search by now
 - create tables for transac and category
+- talked to TA and Gus to draw a better database and correspondent relationship
 
 (02-08-2018)
 
