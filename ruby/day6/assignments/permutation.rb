@@ -17,4 +17,4 @@ for i in new_arr
   str = i.join(" ")
   print "#{str}\n"
 end
-#puts new_arr
+# puts `new array: #{new_arr}`
